@@ -7,4 +7,6 @@ tags:
 ---
 # Notas DWES
 
-Hola 2
+Para hacer *backups* de la base de datos con MariaDB --> [[Backup and Restore with Mariabackup]]
+
+

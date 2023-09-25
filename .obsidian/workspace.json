@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gsdap2023/sin/notas_sin.md",
+                "file": "gsdap2024/dwes/notas_dwes.md",
                 "mode": "source",
                 "source": false
               }
@@ -30,26 +30,21 @@
                 "source": false
               }
             }
-          }
-        ]
-      },
-      {
-        "id": "4125fe820cc6ddc6",
-        "type": "tabs",
-        "children": [
+          },
           {
-            "id": "a9826c968c29f8ff",
+            "id": "1aa84c74f8b6baba",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gsdap2024/daw/notas_daw.md",
+                "file": "gsdap2024/dwes/Backup and Restore with Mariabackup.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -115,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gsdap2023/sin/notas_sin.md",
+                "file": "gsdap2024/dwes/Backup and Restore with Mariabackup.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gsdap2023/sin/notas_sin.md",
+                "file": "gsdap2024/dwes/Backup and Restore with Mariabackup.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gsdap2023/sin/notas_sin.md"
+                "file": "gsdap2024/dwes/Backup and Restore with Mariabackup.md"
               }
             }
           },
@@ -186,28 +181,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3b5dbed79bd35a33",
+  "active": "1aa84c74f8b6baba",
   "lastOpenFiles": [
+    "gsdap2024/dwec/paginaweb_ejemplo/images/realuzi.jpg",
+    "gsdap2024/dwec/paginaweb_ejemplo/images/uzi.jfif",
+    "gsdap2024/dwec/paginaweb_ejemplo/images/uzi.jfif.crdownload",
+    "gsdap2024/dwec/paginaweb_ejemplo/images",
+    "gsdap2024/dwec/paginaweb_ejemplo/Nueva carpeta",
+    "gsdap2024/dwec/paginaweb_ejemplo/style.css",
+    "gsdap2024/dwec/paginaweb_ejemplo/index.html",
+    "gsdap2024/dwec/paginaweb_ejemplo",
+    "gsdap2024/dwes/Backup and Restore with Mariabackup.pdf",
+    "gsdap2024/dwes/Backup and Restore with Mariabackup.md",
+    "gsdap2024/dwes/notas_dwes.md",
+    "images/Pasted image 20230925171827.png",
+    "images",
+    "images/Pasted image 20230925172407.png",
+    "images/Pasted image 20230925172352.png",
+    "images/Pasted image 20230925172329.png",
+    "images/Pasted image 20230925172242.png",
+    "images/Pasted image 20230925172228.png",
+    "gsdap2024/dwes/DWES_MapasConceptuales.pdf",
+    "gsdap2023/sin/notas_sin.md",
     "gsdap2023/ed/notas_ed.md",
     "gsdap2024/pdaw/notas_proyecto.md",
-    "gsdap2024/dwes/notas_dwes.md",
     "gsdap2024/dwec/notas_dwec.md",
-    "gsdap2024/diw/0. DIW presentation 2023-24.pdf",
     "gsdap2024/diw/notas_diw.md",
     "gsdap2024/daw/notas_daw.md",
-    "gsdap2023/sin/notas_sin.md",
     "Importante.md",
     "2023-09-22.md",
-    "~syncthing~importante.md.tmp",
     "todos.md",
-    "file.org",
-    "gsdap2024/pdaw",
-    "gsdap2024/daw",
-    "gsdap2024/dwes",
-    "gsdap2024/dwec",
-    "gsdap2023/ed",
-    "gsdap2023/sin",
-    "gsdap2023",
     "file.md"
   ]
 }
