@@ -1,4 +1,8 @@
 [
   "obsidian-style-settings",
-  "multi-column-markdown"
+  "multi-column-markdown",
+  "obsidian-icon-folder",
+  "obsidian-excalidraw-plugin",
+  "better-word-count",
+  "quick-latex"
 ]

@@ -4,40 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "8f9a9f32e25c79d4",
+        "id": "d1bfe1fe09c93008",
         "type": "tabs",
         "children": [
+          {
+            "id": "1075fe7c72fcd802",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "matemáticas/Matemáticas I y II.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
           {
             "id": "bc72916191336238",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
-                "mode": "source",
-                "source": false
+                "file": "matemáticas/Matemáticas simplificadas.pdf"
               }
             }
           }
-        ]
-      },
-      {
-        "id": "3b8bce6cb3e37919",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "8bc160f49948de30",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "gsdap2024/dwes/Conceptos GET y POST/GET y POST.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -87,7 +80,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 213.5,
+    "collapsed": true
   },
   "right": {
     "id": "a325437f8fe2dbb0",
@@ -103,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
+                "file": "matemáticas/Matemáticas simplificadas.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
+                "file": "matemáticas/Matemáticas simplificadas.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md"
+                "file": "matemáticas/Matemáticas simplificadas.pdf"
               }
             }
           },
@@ -171,11 +165,18 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
   "active": "bc72916191336238",
   "lastOpenFiles": [
+    "matemáticas/Matemáticas I y II.md",
+    "matemáticas/Matemáticas simplificadas.pdf",
+    "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
+    "README.md",
+    "Excalidraw/Guía Mates.md",
+    "Excalidraw",
     "gsdap2024/dwes/Proeycto Hotel/index.html",
     "gsdap2024/dwes/Proeycto Hotel",
     "gsdap2024/dwes/Conceptos GET y POST/GET y POST.md",
@@ -183,7 +184,6 @@
     "gsdap2024/dwes/Conceptos GET y POST/Redirección de páginas.md",
     "gsdap2024/dwes/Conceptos GET y POST/Subir archivos al servidor.md",
     "gsdap2024/dwes/Conceptos GET y POST/Sesiones en PHP.md",
-    "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
     "gsdap2024/dwes/Notas_DWES.md",
     "gsdap2024/dwes/PDFs",
     "gsdap2024/dwes/Resolución de conceptos",
@@ -201,10 +201,6 @@
     "images",
     "gsdap2024/dwec/paginaweb_ejemplo/style.css",
     "gsdap2024/dwec/paginaweb_ejemplo/images/realuzi.jpg",
-    "gsdap2024/dwec/paginaweb_ejemplo/index.html",
-    "gsdap2024/dwec/paginaweb_ejemplo/images",
-    "gsdap2024/dwec/paginaweb_ejemplo",
-    "README.md",
     "gsdap2023/ed/notas_ed.md",
     "gsdap2024/pdaw/notas_proyecto.md",
     "gsdap2024/daw/notas_daw.md",

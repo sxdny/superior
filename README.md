@@ -1,2 +1,2 @@
-# Acticidades del Grado Superior DAW
-Escribir aquú una guía de como hacer tal y tal.
+# Actividades del Grado Superior DAW
+Escribir aquí una guía de como hacer tal y tal.
