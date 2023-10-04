@@ -4,34 +4,32 @@
     "type": "split",
     "children": [
       {
-        "id": "8f9a9f32e25c79d4",
+        "id": "3b8bce6cb3e37919",
         "type": "tabs",
         "children": [
           {
-            "id": "bc72916191336238",
+            "id": "12ee664ce22d1512",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
-                "mode": "source",
-                "source": false
+                "file": "mates/Matemáticas simplificadas.pdf"
               }
             }
           }
         ]
       },
       {
-        "id": "3b8bce6cb3e37919",
+        "id": "b085cdc17ece250f",
         "type": "tabs",
         "children": [
           {
-            "id": "8bc160f49948de30",
+            "id": "3e89700800a4648c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gsdap2024/dwes/Conceptos GET y POST/GET y POST.md",
+                "file": "mates/Importantes.md",
                 "mode": "source",
                 "source": false
               }
@@ -87,7 +85,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "a325437f8fe2dbb0",
@@ -103,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
+                "file": "mates/Importantes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
+                "file": "mates/Importantes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md"
+                "file": "mates/Importantes.md"
               }
             }
           },
@@ -174,16 +173,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bc72916191336238",
+  "active": "3e89700800a4648c",
   "lastOpenFiles": [
+    "mates/Matemáticas simplificadas.pdf",
+    "mates/Importantes.md",
+    "gsdap2024/dwes/Conceptos GET y POST/GET y POST.md",
+    "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
     "gsdap2024/dwes/Proeycto Hotel/index.html",
     "gsdap2024/dwes/Proeycto Hotel",
-    "gsdap2024/dwes/Conceptos GET y POST/GET y POST.md",
     "gsdap2024/dwes/Curso PHP Open Webinars.md",
     "gsdap2024/dwes/Conceptos GET y POST/Redirección de páginas.md",
     "gsdap2024/dwes/Conceptos GET y POST/Subir archivos al servidor.md",
     "gsdap2024/dwes/Conceptos GET y POST/Sesiones en PHP.md",
-    "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
     "gsdap2024/dwes/Notas_DWES.md",
     "gsdap2024/dwes/PDFs",
     "gsdap2024/dwes/Resolución de conceptos",
@@ -202,8 +203,6 @@
     "gsdap2024/dwec/paginaweb_ejemplo/style.css",
     "gsdap2024/dwec/paginaweb_ejemplo/images/realuzi.jpg",
     "gsdap2024/dwec/paginaweb_ejemplo/index.html",
-    "gsdap2024/dwec/paginaweb_ejemplo/images",
-    "gsdap2024/dwec/paginaweb_ejemplo",
     "README.md",
     "gsdap2023/ed/notas_ed.md",
     "gsdap2024/pdaw/notas_proyecto.md",
