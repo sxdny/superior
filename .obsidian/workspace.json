@@ -4,22 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "3b8bce6cb3e37919",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "12ee664ce22d1512",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "mates/Matemáticas simplificadas.pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
         "id": "b085cdc17ece250f",
         "type": "tabs",
         "children": [
@@ -29,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "mates/Importantes.md",
+                "file": "gsdap2024/dwec/Actividad Metrópolis.md",
                 "mode": "source",
                 "source": false
               }
@@ -102,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "mates/Importantes.md",
+                "file": "gsdap2024/dwec/Actividad Metrópolis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "mates/Importantes.md",
+                "file": "gsdap2024/dwec/Actividad Metrópolis.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "mates/Importantes.md"
+                "file": "gsdap2024/dwec/Actividad Metrópolis.md"
               }
             }
           },
@@ -175,8 +159,10 @@
   },
   "active": "3e89700800a4648c",
   "lastOpenFiles": [
-    "mates/Matemáticas simplificadas.pdf",
+    "gsdap2024/dwec/notas_dwec.md",
+    "gsdap2024/dwec/Actividad Metrópolis.md",
     "mates/Importantes.md",
+    "mates/Matemáticas simplificadas.pdf",
     "gsdap2024/dwes/Conceptos GET y POST/GET y POST.md",
     "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
     "gsdap2024/dwes/Proeycto Hotel/index.html",
@@ -191,7 +177,6 @@
     "gsdap2024/dwes/Conceptos GET y POST",
     "gsdap2024/diw/notas_diw.md",
     "gsdap2024/dwes/PDFs/DWES_MapasConceptuales.pdf",
-    "gsdap2024/dwec/notas_dwec.md",
     "gsdap2023/sin/notas_sin.md",
     "images/Pasted image 20230925172407.png",
     "images/Pasted image 20230925172352.png",
