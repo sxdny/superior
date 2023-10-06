@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Articoders | Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<style>
+
+    :root {
+        --size-hero: 0px;
+    }
+    @font-face {
+        font-family: "Helvetica";
+        src: url("fonts/Helvetica/Helvetica.ttf");
+    }
+
+    @font-face {
+        font-family: "SF Mono";
+        src: url("fonts/SFMono/SFMono-Bold.otf") format("opentype");
+    }
+
+    * {
+        font-family: "Helvetica" !important;
+    }
+
+    .display-2 {
+        font-family: "SF Mono" !important;
+        letter-spacing: -4px;
+    }
+
+    .fill { 
+        min-height: 100%;
+        height: calc(100vh - var(--size-hero));
+    }
+
+</style>
+
+<script>
+
+    let nav = document.getElementById('nav');
+    let hero = document.getElementById('hero');
+
+    let height = nav.clientHeight + hero.clientHeight;
+
+    changeSize = () => {
+        document.querySelector(':root').style.setProperty('--size-hero'), height;
+    }
+
+    window.onload = function() {
+            changeSize();
+      };
+
+</script>
+
+<body style="background-color: #E4F4FF">
+
+    <!-- Navbar -->
+
+    <div style="background-color: #13293D" class=" px-4 py-2 d-flex justify-content-center" id="nav">
+        <nav class="navbar d-flex w-75 justtify-content-center">
+            <div class="">
+                <a class="navbar-brand" href="#">Articoders</a>
+            </div>
+            <div class="d-flex justtify-content-around gap-2">
+                <a class="btn btn-link text-body text-decoration-none" href="#">Escritores</a>
+                <a class="btn btn-link text-body text-decoration-none" href="#">Contáctanos</a>
+                <a class="btn btn-link text-body text-decoration-none" href="#">Tópicos</a>
+                <a class="btn btn-light rounded-0 text-decoration-none" href="#">Iniciar Sesión</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+
+    <div id="hero" style="background-color: #13293D;" class=" py-5 d-flex text-start justify-content-center">
+        <div class="w-75">
+            <p class="display-2">Search, Read and Code</p>
+        </div>
+    </div>
+
+    <!-- Articles view -->
+    <div class="fill">
+
+        <div class="features">
+            <!-- Articulo destacado -->
+            <div class="heading">
+                <!-- <span> icono </span> -->
+                <h3>Artículo destacado</h3>
+            </div>
+
+            <div class="sectionFeatured">
+                <div class="info_autor">
+                    <p>Nombre del autor</p>
+                    <h2>Titulo del artículo</h2>
+                    <p>Metadatos</p>
+                </div>
+                <div class="buttons">
+                    <button type="button">Botón</button>
+                </div>
+            </div>
+
+            <div class="imagen">
+                <!-- Imagen del articulo -->
+            </div>
+
+            
+        </div>
+        <div class="trend">
+            <!-- Articulos en tendencia -->
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
