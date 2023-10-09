@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
+                "file": "mates/Importantes.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "a325437f8fe2dbb0",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
+                "file": "mates/Importantes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
+                "file": "mates/Importantes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md"
+                "file": "mates/Importantes.md"
               }
             }
           },
@@ -160,6 +159,7 @@
   },
   "active": "3e89700800a4648c",
   "lastOpenFiles": [
+    "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
     "student047/images/card-image.jpeg",
     "student047/images",
     "student047/components/header.php",
@@ -171,7 +171,6 @@
     "gsdap2024/diw/ac4/package-lock.json",
     "gsdap2024/diw/ac4/index.html",
     "gsdap2023/sin/notas_sin.md",
-    "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
     "gsdap2024/dwes/Conceptos GET y POST/Redirección de páginas.md",
     "gsdap2024/diw/ac4/node_modules/@popperjs/core/dist/esm/utils/within.js",
     "gsdap2024/diw/ac4/node_modules/@popperjs/core/README.md",
