@@ -3,19 +3,14 @@
 ?>
 
 <!-- Header de la página. -->
-<?php include('header.php') ?>
+<?php include('components/header.php') ?>
 
-<div class="uk-section">
-    <div class="uk-container">
-        <h1 class="uk-heading-xlarge uk-text-center uk-text-secondary">Welcome to my Hotel!</h1>
+<div class="container-fluid pt-5">
+    <div class="text-center pt-5">
+        <h1 class="display-2 pt-5">Welcome to my Hotel!</h1>
+        <a class="btn btn-primary btn-lg mt-3" href="reserva.php" role="button">Empezar a reservar</a>
     </div>
 </div>
 
-
-<!-- UIkit JS -->
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.0/dist/js/uikit.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.17.0/dist/js/uikit-icons.min.js"></script>
-
-</body>
-
-</html>
+<!-- Footer de la página. -->
+<?php include('components/footer.php') ?>
