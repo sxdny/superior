@@ -10,10 +10,7 @@
 </head>
 
 <style>
-
-    :root {
-        --size-hero: 0px;
-    }
+    
     @font-face {
         font-family: "Helvetica";
         src: url("fonts/Helvetica/Helvetica.ttf");
@@ -33,88 +30,236 @@
         letter-spacing: -4px;
     }
 
-    .fill { 
-        min-height: 100%;
-        height: calc(100vh - var(--size-hero));
-    }
-
 </style>
 
-<script>
-
-    let nav = document.getElementById('nav');
-    let hero = document.getElementById('hero');
-
-    let height = nav.clientHeight + hero.clientHeight;
-
-    changeSize = () => {
-        document.querySelector(':root').style.setProperty('--size-hero'), height;
-    }
-
-    window.onload = function() {
-            changeSize();
-      };
-
-</script>
-
-<body style="background-color: #E4F4FF">
+<body class="justify-content-center" style="background-color: #E4F4FF">
 
     <!-- Navbar -->
 
-    <div style="background-color: #13293D" class=" px-4 py-2 d-flex justify-content-center" id="nav">
-        <nav class="navbar d-flex w-75 justtify-content-center">
-            <div class="">
-                <a class="navbar-brand" href="#">Articoders</a>
-            </div>
-            <div class="d-flex justtify-content-around gap-2">
-                <a class="btn btn-link text-body text-decoration-none" href="#">Escritores</a>
-                <a class="btn btn-link text-body text-decoration-none" href="#">Contáctanos</a>
-                <a class="btn btn-link text-body text-decoration-none" href="#">Tópicos</a>
-                <a class="btn btn-light rounded-0 text-decoration-none" href="#">Iniciar Sesión</a>
-            </div>
-        </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg bg-body py-3 px-5">
+        <div class="container-fluid px-5">
+          <a class="navbar-brand" href="#">Articoders</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Iniciar Sesión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Escritores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contáctanos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Topicos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
     <!-- Hero -->
 
-    <div id="hero" style="background-color: #13293D;" class=" py-5 d-flex text-start justify-content-center">
-        <div class="w-75">
-            <p class="display-2">Search, Read and Code</p>
+    <div id="hero" class="border bg-body p-5 d-flex text-start">
+        <div class="w-100 mx-5">
+            <p class="display-2">Solo imagínate que esto es un título.</p>
         </div>
     </div>
 
     <!-- Articles view -->
-    <div class="fill">
+    <div style="margin: 0 !important;"" class="row">
 
-        <div class="features">
-            <!-- Articulo destacado -->
-            <div class="heading">
-                <!-- <span> icono </span> -->
-                <h3>Artículo destacado</h3>
-            </div>
-
-            <div class="sectionFeatured">
-                <div class="info_autor">
-                    <p>Nombre del autor</p>
-                    <h2>Titulo del artículo</h2>
-                    <p>Metadatos</p>
+        <!-- Articulo destacado -->
+        <div class="col-lg-8 p-5 bg-body border d-flex flex-column">
+            <div class="article-nav mx-5">
+                <div class="heading">
+                    <!-- <span> icono </span> -->
+                    <h3>Artículo destacado</h3>
                 </div>
-                <div class="buttons">
-                    <button type="button">Botón</button>
+
+                <div class="sectionFeatured">
+                    <div class="info_autor">
+                        <p>Nombre del autor</p>
+                        <h2>Titulo del artículo</h2>
+                        <p>Fecha · Minutos de lectura</p>
+                    </div>
+                    <div class="buttons">
+                        <button type="button">Botón</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="imagen">
-                <!-- Imagen del articulo -->
+            <div class="imagen mx-5 my-5">
+                <img class="img-fluid" src="https://placehold.co/800x600" alt="" srcset="">
             </div>
 
-            
+
         </div>
-        <div class="trend">
+
+        <div class="trend col-lg-4 border bg-body px-5 d-flex flex-column justify-content-around p-5 gap-5">
             <!-- Articulos en tendencia -->
+            <div class="art d-flex w-100 border justify-content-between p-3">
+                <div class="art-nav-s">
+                    <h2>Titulo articulo</h2>
+                    <p>No se que de metadatos</p>
+                </div>
+                <div class="art-image-sm">
+                    <img class="img-fluid" src="https://placehold.co/200x100" alt="" srcset="">
+                </div>
+            </div>
+            <div class="art d-flex w-100 border justify-content-between p-3">
+                <div class="art-nav-s">
+                    <h2>Titulo articulo</h2>
+                    <p>No se que de metadatos</p>
+                </div>
+                <div class="art-image-sm">
+                    <img class="img-fluid" src="https://placehold.co/200x100" alt="" srcset="">
+                </div>
+            </div>
+            <div class="art d-flex w-100 border justify-content-between p-3">
+                <div class="art-nav-s">
+                    <h2>Titulo articulo</h2>
+                    <p>No se que de metadatos</p>
+                </div>
+                <div class="art-image-sm">
+                    <img class="img-fluid" src="https://placehold.co/200x100" alt="" srcset="">
+                </div>
+            </div>
+            <div class="art d-flex w-100 border justify-content-between p-3">
+                <div class="art-nav-s">
+                    <h2>Titulo articulo</h2>
+                    <p>No se que de metadatos</p>
+                </div>
+                <div class="art-image-sm">
+                    <img class="img-fluid" src="https://placehold.co/200x100" alt="" srcset="">
+                </div>
+            </div>
+            <div class="art d-flex w-100 border justify-content-between p-3">
+                <div class="art-nav-s">
+                    <h2>Titulo articulo</h2>
+                    <p>No se que de metadatos</p>
+                </div>
+                <div class="art-image-sm">
+                    <img class="img-fluid" src="https://placehold.co/200x100" alt="" srcset="">
+                </div>
+            </div>
         </div>
-
     </div>
+
+    <!-- Últimas publicaciones y buscar artículos... -->
+
+    <div class="trend border bg-body d-flex flex-column justify-content-around">
+        <div class="searchbar d-flex justify-content-between border m-5">
+            <div class="heading">
+                <h3>Últimas publicaciones</h3>
+            </div>
+            <div class="search">
+                <p>Menu de buscar</p>
+            </div>
+        </div>
+        <div class="articlesView row row-cols-lg-2 mx-5 mb-5">
+
+            <div class="p-2 d-flex mt-3 justify-content-between">
+                <div class="article border d-flex justify-content-between w-100 p-3">
+                    <div class="texto">
+                        <h4>Titulo del artículo</h4>
+                        <p>Metadatos</p>
+                    </div>
+                    <div class="img">
+                        <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
+                    </div>
+                </div>     
+            </div>
+
+            <div class="p-2 d-flex mt-3 justify-content-between">
+                <div class="article border d-flex justify-content-between w-100 p-3">
+                    <div class="texto">
+                        <h4>Titulo del artículo</h4>
+                        <p>Metadatos</p>
+                    </div>
+                    <div class="img">
+                        <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
+                    </div>
+                </div>     
+            </div>
+
+            <div class="p-2 d-flex mt-3 justify-content-between">
+                <div class="article border d-flex justify-content-between w-100 p-3">
+                    <div class="texto">
+                        <h4>Titulo del artículo</h4>
+                        <p>Metadatos</p>
+                    </div>
+                    <div class="img">
+                        <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
+                    </div>
+                </div>     
+            </div>
+
+            <div class="p-2 d-flex mt-3 justify-content-between">
+                <div class="article border d-flex justify-content-between w-100 p-3">
+                    <div class="texto">
+                        <h4>Titulo del artículo</h4>
+                        <p>Metadatos</p>
+                    </div>
+                    <div class="img">
+                        <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
+                    </div>
+                </div>     
+            </div>
+
+            <div class="p-2 d-flex mt-3 justify-content-between">
+                <div class="article border d-flex justify-content-between w-100 p-3">
+                    <div class="texto">
+                        <h4>Titulo del artículo</h4>
+                        <p>Metadatos</p>
+                    </div>
+                    <div class="img">
+                        <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
+                    </div>
+                </div>     
+            </div>
+
+            <div class="p-2 d-flex mt-3 justify-content-between">
+                <div class="article border d-flex justify-content-between w-100 p-3">
+                    <div class="texto">
+                        <h4>Titulo del artículo</h4>
+                        <p>Metadatos</p>
+                    </div>
+                    <div class="img">
+                        <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
+                    </div>
+                </div>     
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-body p-5 d-flex flex-column">
+        <div class="logos_socials d-sm-flex justify-content-between border p-5">
+            <div class="logo">
+                <h2>Logo image</h2>
+            </div>
+            <div class="socials d-sm-flex justify-content-around">
+                <p class="px-4">Social</p>
+                <p class="px-4">Social</p>
+                <p class="px-4">Social</p>
+                <p class="px-4">Social</p>
+                
+            </div>
+        </div>
+        <div class="info border px-5 p-5 d-sm-flex justify-content-between">
+            <div class="copy">
+                <p>Copyright de ns que</p>
+            </div>
+            <div class="politicas d-flex justify-content-around gap-3">
+                <p>Hola me llamo Políticas de privacidad</p>
+                <p>Bienestar y salud</p>
+            </div>
+        </div>
+        
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
