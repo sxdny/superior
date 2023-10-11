@@ -7,13 +7,56 @@
     <title>Articoders | Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+
 </head>
 
 <style>
-    
     @font-face {
         font-family: "Helvetica";
         src: url("fonts/Helvetica/Helvetica.ttf");
+    }
+
+    .bg-body {
+        background-color: #E4F4FF !important;
+    }
+
+    i {
+        font-size: 2.4rem;
+    }
+
+    .buttons-sect>i {
+        font-size: 3rem;
+    }
+
+    .heading {
+        color: #13293d;
+    }
+
+    .border-bottom,
+    .border-top,
+    .border-end,
+    .border-start,
+    .border {
+        border-color: #13293d !important;
+    }
+
+    .button {
+        border: 2px solid #13293d;
+        color: #13293d;
+        background-color: #CEFF1A;
+        font-weight: bold;
+    }
+
+    .navbar,
+    .hero {
+        background-color: #13293d !important;
+        color: #E4F4FF !important;
     }
 
     @font-face {
@@ -21,15 +64,34 @@
         src: url("fonts/SFMono/SFMono-Bold.otf") format("opentype");
     }
 
-    * {
+    p,
+    h1 {
         font-family: "Helvetica" !important;
+    }
+
+    .art-image-sm,
+    .img {
+        background-image: url("https://placehold.co/200x100");
+    }
+
+    img {
+        display: block !important;
     }
 
     .display-2 {
         font-family: "SF Mono" !important;
+        color: #E4F4FF !important;
         letter-spacing: -4px;
     }
 
+    .art-nav-s>p {
+        font-size: 0.9rem;
+    }
+
+    .art-destacado,
+    .art {
+        color: #13293d !important;
+    }
 </style>
 
 <body class="justify-content-center" style="background-color: #E4F4FF">
@@ -38,115 +100,147 @@
 
     <nav class="navbar navbar-expand-lg bg-body py-3 px-5">
         <div class="container-fluid px-5">
-          <a class="navbar-brand" href="#">Articoders</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Iniciar Sesión</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Escritores</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contáctanos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Topicos</a>
-              </li>
-            </ul>
-          </div>
+            <a class="navbar-brand" href="#">Articoders</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Escritores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tópicos</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
+    </nav>
 
     <!-- Hero -->
-
-    <div id="hero" class="border bg-body p-5 d-flex text-start">
+    <div id="hero" class="hero bg-body p-5 d-flex text-start">
         <div class="w-100 mx-5">
-            <p class="display-2">Solo imagínate que esto es un título.</p>
+            <p class="display-2">Solo imagínate que esto és un título.</p>
         </div>
     </div>
 
     <!-- Articles view -->
     <div style="margin: 0 !important;"" class="row">
-
         <!-- Articulo destacado -->
-        <div class="col-lg-8 p-5 bg-body border d-flex flex-column">
-            <div class="article-nav mx-5">
-                <div class="heading">
-                    <!-- <span> icono </span> -->
+        <div class="art-destacado col-xxl-8 p-5 bg-body d-flex flex-column border-bottom border-2">
+            <div class="mx-5">
+                <!-- heading seccion -->
+                <div class="heading d-flex gap-2">
+                    <i class="las la-star"></i>
                     <h3>Artículo destacado</h3>
                 </div>
 
-                <div class="sectionFeatured">
-                    <div class="info_autor">
+                <div class="sectionFeatured d-flex mt-5">
+                    <div class="info_autor justify-content-between w-100">
                         <p>Nombre del autor</p>
                         <h2>Titulo del artículo</h2>
                         <p>Fecha · Minutos de lectura</p>
                     </div>
-                    <div class="buttons">
-                        <button type="button">Botón</button>
+                    <div class="buttons-sect d-flex flex-column justify-content-between text-end gap-5">
+                        <i class="lar la-bookmark"></i>
+                        <button class="button px-5 py-3" type="button">Botón</button>
                     </div>
                 </div>
             </div>
-
-            <div class="imagen mx-5 my-5">
-                <img class="img-fluid" src="https://placehold.co/800x600" alt="" srcset="">
-            </div>
-
-
-        </div>
-
-        <div class="trend col-lg-4 border bg-body px-5 d-flex flex-column justify-content-around p-5 gap-5">
-            <!-- Articulos en tendencia -->
-            <div class="art d-flex w-100 border justify-content-between p-3">
-                <div class="art-nav-s">
-                    <h2>Titulo articulo</h2>
-                    <p>No se que de metadatos</p>
-                </div>
-                <div class="art-image-sm">
-                    <img class="img-fluid" src="https://placehold.co/200x100" alt="" srcset="">
-                </div>
-            </div>
-            <div class="art d-flex w-100 border justify-content-between p-3">
-                <div class="art-nav-s">
-                    <h2>Titulo articulo</h2>
-                    <p>No se que de metadatos</p>
-                </div>
-                <div class="art-image-sm">
-                    <img class="img-fluid" src="https://placehold.co/200x100" alt="" srcset="">
-                </div>
-            </div>
-            <div class="art d-flex w-100 border justify-content-between p-3">
-                <div class="art-nav-s">
-                    <h2>Titulo articulo</h2>
-                    <p>No se que de metadatos</p>
-                </div>
-                <div class="art-image-sm">
-                    <img class="img-fluid" src="https://placehold.co/200x100" alt="" srcset="">
-                </div>
-            </div>
-            <div class="art d-flex w-100 border justify-content-between p-3">
-                <div class="art-nav-s">
-                    <h2>Titulo articulo</h2>
-                    <p>No se que de metadatos</p>
-                </div>
-                <div class="art-image-sm">
-                    <img class="img-fluid" src="https://placehold.co/200x100" alt="" srcset="">
-                </div>
-            </div>
-            <div class="art d-flex w-100 border justify-content-between p-3">
-                <div class="art-nav-s">
-                    <h2>Titulo articulo</h2>
-                    <p>No se que de metadatos</p>
-                </div>
-                <div class="art-image-sm">
-                    <img class="img-fluid" src="https://placehold.co/200x100" alt="" srcset="">
-                </div>
+            <!-- Image placeholder -->
+            <div class="mx-5 my-5">
+                <img class="img-fluid border border-2 w-100" src="https://placehold.co/1100x600" alt="" srcset="">
             </div>
         </div>
+
+        <div class="trend col-xxl-4 border-start border-2 border-bottom bg-body p-5 d-flex flex-column justify-content-between gap-5">
+            <div class="heading d-flex gap-2">
+                <i class="las la-poll"></i>
+                <h3>En tendencia</h3>
+            </div>
+            <!-- Artículos en tentendia -->
+            <div class="art d-flex w-100 justify-content-between border border-2">
+                <div class="art-nav-s d-flex  justify-content-between w-75 p-3">
+                    <div class="text">
+                        <h4>Titulo articulo</h4>
+                        <p>Fecha · Minutos de lectura</p>
+                    </div>
+                    <div class="bookmark">
+                        <i class="lar la-bookmark"></i>
+                    </div>
+                </div>
+                <div class="art-image-sm">
+                    <img class="img-fluid h-100 border-start border-2 m-0 p-0" src="https://placehold.co/200x100" alt=""
+                        srcset="">
+                </div>
+            </div>
+            <div class="art d-flex w-100 justify-content-between border border-2">
+                <div class="art-nav-s d-flex  justify-content-between w-75 p-3">
+                    <div class="text">
+                        <h4>Titulo articulo</h4>
+                        <p>Fecha · Minutos de lectura</p>
+                    </div>
+                    <div class="bookmark">
+                        <i class="lar la-bookmark"></i>
+                    </div>
+                </div>
+                <div class="art-image-sm">
+                    <img class="img-fluid h-100 border-start border-2 m-0 p-0" src="https://placehold.co/200x100" alt=""
+                        srcset="">
+                </div>
+            </div>
+            <div class="art d-flex w-100 justify-content-between border border-2">
+                <div class="art-nav-s d-flex  justify-content-between w-75 p-3">
+                    <div class="text">
+                        <h4>Titulo articulo</h4>
+                        <p>Fecha · Minutos de lectura</p>
+                    </div>
+                    <div class="bookmark">
+                        <i class="lar la-bookmark"></i>
+                    </div>
+                </div>
+                <div class="art-image-sm">
+                    <img class="img-fluid h-100 border-start border-2 m-0 p-0" src="https://placehold.co/200x100" alt=""
+                        srcset="">
+                </div>
+            </div>
+            <div class="art d-flex w-100 justify-content-between border border-2">
+                <div class="art-nav-s d-flex  justify-content-between w-75 p-3">
+                    <div class="text">
+                        <h4>Titulo articulo</h4>
+                        <p>Fecha · Minutos de lectura</p>
+                    </div>
+                    <div class="bookmark">
+                        <i class="lar la-bookmark"></i>
+                    </div>
+                </div>
+                <div class="art-image-sm">
+                    <img class="img-fluid h-100 border-start border-2 m-0 p-0" src="https://placehold.co/200x100" alt=""
+                        srcset="">
+                </div>
+            </div>
+            <div class="art d-flex w-100 justify-content-between border border-2">
+                <div class="art-nav-s d-flex  justify-content-between w-75 p-3">
+                    <div class="text">
+                        <h4>Titulo articulo</h4>
+                        <p>Fecha · Minutos de lectura</p>
+                    </div>
+                    <div class="bookmark">
+                        <i class="lar la-bookmark"></i>
+                    </div>
+                </div>
+                <div class="art-image-sm">
+                    <img class="img-fluid h-100 border-start border-2 m-0 p-0" src="https://placehold.co/200x100" alt=""
+                        srcset="">
+                </div>
+            </div>
     </div>
 
     <!-- Últimas publicaciones y buscar artículos... -->
@@ -171,7 +265,7 @@
                     <div class="img">
                         <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
                     </div>
-                </div>     
+                </div>
             </div>
 
             <div class="p-2 d-flex mt-3 justify-content-between">
@@ -183,7 +277,7 @@
                     <div class="img">
                         <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
                     </div>
-                </div>     
+                </div>
             </div>
 
             <div class="p-2 d-flex mt-3 justify-content-between">
@@ -195,7 +289,7 @@
                     <div class="img">
                         <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
                     </div>
-                </div>     
+                </div>
             </div>
 
             <div class="p-2 d-flex mt-3 justify-content-between">
@@ -207,7 +301,7 @@
                     <div class="img">
                         <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
                     </div>
-                </div>     
+                </div>
             </div>
 
             <div class="p-2 d-flex mt-3 justify-content-between">
@@ -219,7 +313,7 @@
                     <div class="img">
                         <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
                     </div>
-                </div>     
+                </div>
             </div>
 
             <div class="p-2 d-flex mt-3 justify-content-between">
@@ -231,7 +325,7 @@
                     <div class="img">
                         <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
                     </div>
-                </div>     
+                </div>
             </div>
         </div>
     </div>
@@ -246,7 +340,7 @@
                 <p class="px-4">Social</p>
                 <p class="px-4">Social</p>
                 <p class="px-4">Social</p>
-                
+
             </div>
         </div>
         <div class="info border px-5 p-5 d-sm-flex justify-content-between">
@@ -258,15 +352,17 @@
                 <p>Bienestar y salud</p>
             </div>
         </div>
-        
+
     </footer>
 
+    <script src="https://kit.fontawesome.com/e93ba2c81b.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>

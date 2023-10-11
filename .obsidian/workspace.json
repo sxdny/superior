@@ -11,11 +11,19 @@
             "id": "3e89700800a4648c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "mates/Importantes.md",
-                "mode": "source",
-                "source": false
+                "file": "mates/Matemáticas simplificadas.pdf"
+              }
+            }
+          },
+          {
+            "id": "f295589f42d8523d",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "mates/Matemáticas simplificadas.pdf"
               }
             }
           }
@@ -85,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "mates/Importantes.md",
+                "file": "mates/Matemáticas simplificadas.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "mates/Importantes.md",
+                "file": "mates/Matemáticas simplificadas.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "mates/Importantes.md"
+                "file": "mates/Matemáticas simplificadas.pdf"
               }
             }
           },
@@ -159,6 +167,8 @@
   },
   "active": "3e89700800a4648c",
   "lastOpenFiles": [
+    "mates/Importantes.md",
+    "mates/Matemáticas simplificadas.pdf",
     "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
     "student047/images/card-image.jpeg",
     "student047/images",
@@ -172,7 +182,6 @@
     "gsdap2024/diw/ac4/index.html",
     "gsdap2023/sin/notas_sin.md",
     "gsdap2024/dwes/Conceptos GET y POST/Redirección de páginas.md",
-    "gsdap2024/diw/ac4/node_modules/@popperjs/core/dist/esm/utils/within.js",
     "gsdap2024/diw/ac4/node_modules/@popperjs/core/README.md",
     "gsdap2024/diw/ac4/node_modules/@popperjs/core/LICENSE.md",
     "gsdap2024/diw/ac4/node_modules/bootstrap/README.md",
@@ -181,7 +190,6 @@
     "gsdap2024/dwes/Conceptos GET y POST/GET y POST.md",
     "gsdap2024/dwec/Actividad Metrópolis.md",
     "gsdap2024/dwec/notas_dwec.md",
-    "mates/Importantes.md",
     "gsdap2024/dwes/Resolución de conceptos/Backup and Restore with Mariabackup.md",
     "gsdap2024/dwes/Curso PHP Open Webinars.md",
     "gsdap2024/dwes/Conceptos GET y POST/Subir archivos al servidor.md",
