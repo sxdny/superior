@@ -55,8 +55,18 @@
         font-size: 1.2rem;
     }
 
+    footer {
+        padding: 0 !important;
+    }
+
+    footer>.border-bottom {
+        border-color: #2e455a !important;
+    }
+
     .navbar,
-    .hero {
+    .hero,
+    .socials>p,
+    footer {
         background-color: #13293d !important;
         color: #E4F4FF !important;
     }
@@ -123,8 +133,13 @@
     }
 
     .etiqueta {
-        background-color: gray;
-        color: lightgray;
+        background-color: rgb(221, 221, 221);
+        color: #141414;
+    }
+
+    .copy>p,
+    .politicas>p {
+        color: #b4ddf8 !important;
     }
 </style>
 
@@ -132,7 +147,7 @@
 
     <!-- Navbar -->
 
-    <nav class="navbar navbar-expand-lg bg-body py-3 px-5">
+    <nav style="border-bottom: 1px solid #5c5c5c;" class="navbar navbar-expand-lg bg-body py-3 px-5">
         <div class="container-fluid px-5">
             <a class="navbar-brand" href="#">Articoders</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -230,7 +245,7 @@
                         <i class="lar la-bookmark"></i>
                     </div>
                 </div>
-                <div class="art-image-sm w-50"></div>
+                <div class="art-image-sm border w-50"></div>
             </div>
 
             <div class="art d-flex w-100 justify-content-between">
@@ -244,7 +259,7 @@
                         <i class="lar la-bookmark"></i>
                     </div>
                 </div>
-                <div class="art-image-sm w-50"></div>
+                <div class="art-image-sm border w-50"></div>
             </div>
 
             <div class="art d-flex w-100 justify-content-between">
@@ -258,7 +273,7 @@
                         <i class="lar la-bookmark"></i>
                     </div>
                 </div>
-                <div class="art-image-sm w-50"></div>
+                <div class="art-image-sm border w-50"></div>
             </div>
 
             <div class="art d-flex w-100 justify-content-between">
@@ -272,7 +287,7 @@
                         <i class="lar la-bookmark"></i>
                     </div>
                 </div>
-                <div class="art-image-sm w-50"></div>
+                <div class="art-image-sm border w-50"></div>
             </div>
         </div>
 
@@ -283,8 +298,9 @@
 
             <!-- Heading -->
             <div class="searchbar d-flex align-items-center justify-content-between text-center  m-5">
-                <div class="heading">
-                    <h3>Últimas publicaciones</h3>
+                <div class="ms-4 heading d-flex gap-2">
+                    <i class="las la-history"></i>
+                    <h5>Últimas publicaciones</h5>
                 </div>
                 <div class="search">
                     <p class="align-self-center">Menú de buscar</p>
@@ -295,90 +311,143 @@
             <div class="articlesView row row-cols-lg-2 mx-5 mb-5">
 
                 <!-- Publicación -->
-                <div class="d-flex mt-3 justify-content-between">
-                    <div class="article border border-2 d-flex justify-content-between w-100">
-                        <div class="texto-etiquetas dflex flex-column p-3 justify-content-between">
-                            <div class="texto">
-                                <p class="username-text">Nombre de usuario</p>
-                                <h4>Titulo del artículo</h4>
-                                <p class="text-muted">Fecha · Minutos de lectura</p>
+                <div class="d-flex mt-3 mh-50 justify-content-between">
+                    <div class="article d-flex justify-content-between w-100">
+                        <div class="texto-etiquetas d-flex w-50 flex-column p-3 justify-content-between">
+                            <div class="texto d-flex justify-content-between w-100 mt-3">
+                                <div class="">
+                                    <p class="username-text">Nombre de usuario</p>
+                                    <h4>Titulo del artículo</h4>
+                                    <p class="text-muted">Fecha · Minutos de lectura</p>
+                                </div>
+                                <div class="bookmark">
+                                    <i class="lar la-bookmark"></i>
+                                </div>
                             </div>
-                            <div class="etiquetas dflex mt-3">
-                                <p class="etiqueta">Etiqueta 1</p>
-                                <p class="etiqueta">Etiqueta 1</p>
+                            <div class="etiquetas d-md-none d-lg-flex d-none gap-3 mt-4">
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
                             </div>
-
                         </div>
-                        <div class="img border-start border-2 w-50 mh-100">
-
-                        </div>
+                        <div class="img border w-50"></div>
                     </div>
                 </div>
 
-                <div class="p-2 d-flex mt-3 justify-content-between">
-                    <div class="article border d-flex justify-content-between w-100 p-3">
-                        <div class="texto">
-                            <h4>Titulo del artículo</h4>
-                            <p>Metadatos</p>
+                <div class="d-flex mt-3 mh-50 justify-content-between">
+                    <div class="article d-flex justify-content-between w-100">
+                        <div class="texto-etiquetas d-flex w-50 flex-column p-3 justify-content-between">
+                            <div class="texto d-flex justify-content-between w-100 mt-3">
+                                <div class="">
+                                    <p class="username-text">Nombre de usuario</p>
+                                    <h4>Titulo del artículo</h4>
+                                    <p class="text-muted">Fecha · Minutos de lectura</p>
+                                </div>
+                                <div class="bookmark">
+                                    <i class="lar la-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="etiquetas d-md-none d-lg-flex d-none gap-3 mt-4">
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
+                            </div>
                         </div>
-                        <div class="img">
-                            <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
-                        </div>
+                        <div class="img border w-50"></div>
                     </div>
                 </div>
 
-                <div class="p-2 d-flex mt-3 justify-content-between">
-                    <div class="article border d-flex justify-content-between w-100 p-3">
-                        <div class="texto">
-                            <h4>Titulo del artículo</h4>
-                            <p>Metadatos</p>
+                <div class="d-flex mt-3 mh-50 justify-content-between">
+                    <div class="article d-flex justify-content-between w-100">
+                        <div class="texto-etiquetas d-flex w-50 flex-column p-3 justify-content-between">
+                            <div class="texto d-flex justify-content-between w-100 mt-3">
+                                <div class="">
+                                    <p class="username-text">Nombre de usuario</p>
+                                    <h4>Titulo del artículo</h4>
+                                    <p class="text-muted">Fecha · Minutos de lectura</p>
+                                </div>
+                                <div class="bookmark">
+                                    <i class="lar la-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="etiquetas d-md-none d-lg-flex d-none gap-3 mt-4">
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
+                            </div>
                         </div>
-                        <div class="img">
-                            <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
-                        </div>
+                        <div class="img border w-50"></div>
                     </div>
                 </div>
 
-                <div class="p-2 d-flex mt-3 justify-content-between">
-                    <div class="article border d-flex justify-content-between w-100 p-3">
-                        <div class="texto">
-                            <h4>Titulo del artículo</h4>
-                            <p>Metadatos</p>
+                <div class="d-flex mt-3 mh-50 justify-content-between">
+                    <div class="article d-flex justify-content-between w-100">
+                        <div class="texto-etiquetas d-flex w-50 flex-column p-3 justify-content-between">
+                            <div class="texto d-flex justify-content-between w-100 mt-3">
+                                <div class="">
+                                    <p class="username-text">Nombre de usuario</p>
+                                    <h4>Titulo del artículo</h4>
+                                    <p class="text-muted">Fecha · Minutos de lectura</p>
+                                </div>
+                                <div class="bookmark">
+                                    <i class="lar la-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="etiquetas d-md-none d-lg-flex d-none gap-3 mt-4">
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
+                            </div>
                         </div>
-                        <div class="img">
-                            <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
-                        </div>
+                        <div class="img border w-50"></div>
                     </div>
                 </div>
 
-                <div class="p-2 d-flex mt-3 justify-content-between">
-                    <div class="article border d-flex justify-content-between w-100 p-3">
-                        <div class="texto">
-                            <h4>Titulo del artículo</h4>
-                            <p>Metadatos</p>
+                <div class="d-flex mt-3 mh-50 justify-content-between">
+                    <div class="article d-flex justify-content-between w-100">
+                        <div class="texto-etiquetas d-flex w-50 flex-column p-3 justify-content-between">
+                            <div class="texto d-flex justify-content-between w-100 mt-3">
+                                <div class="">
+                                    <p class="username-text">Nombre de usuario</p>
+                                    <h4>Titulo del artículo</h4>
+                                    <p class="text-muted">Fecha · Minutos de lectura</p>
+                                </div>
+                                <div class="bookmark">
+                                    <i class="lar la-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="etiquetas d-md-none d-lg-flex d-none gap-3 mt-4">
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
+                            </div>
                         </div>
-                        <div class="img">
-                            <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
-                        </div>
+                        <div class="img border w-50"></div>
                     </div>
                 </div>
 
-                <div class="p-2 d-flex mt-3 justify-content-between">
-                    <div class="article border d-flex justify-content-between w-100 p-3">
-                        <div class="texto">
-                            <h4>Titulo del artículo</h4>
-                            <p>Metadatos</p>
+                <div class="d-flex mt-3 mh-50 justify-content-between">
+                    <div class="article d-flex justify-content-between w-100">
+                        <div class="texto-etiquetas d-flex w-50 flex-column p-3 justify-content-between">
+                            <div class="texto d-flex justify-content-between w-100 mt-3">
+                                <div class="">
+                                    <p class="username-text">Nombre de usuario</p>
+                                    <h4>Titulo del artículo</h4>
+                                    <p class="text-muted">Fecha · Minutos de lectura</p>
+                                </div>
+                                <div class="bookmark">
+                                    <i class="lar la-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="etiquetas d-md-none d-lg-flex d-none gap-3 mt-4">
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
+                                <p class="etiqueta py-1 px-3 rounded-3">Etiqueta</p>
+                            </div>
                         </div>
-                        <div class="img">
-                            <img class="img-fluid" src="https://placehold.co/200x200" alt="" srcset="">
-                        </div>
+                        <div class="img border w-50"></div>
                     </div>
                 </div>
+
             </div>
         </div>
 
-        <footer class="bg-body p-5 d-flex flex-column">
-            <div class="logos_socials d-sm-flex justify-content-between border p-5">
+        <footer class="d-flex flex-column">
+            <div class="logos_socials d-sm-flex justify-content-between border-bottom p-5">
                 <div class="logo">
                     <h2>Logo image</h2>
                 </div>
@@ -390,7 +459,7 @@
 
                 </div>
             </div>
-            <div class="info border px-5 p-5 d-sm-flex justify-content-between">
+            <div class="info px p-5 d-sm-flex justify-content-between">
                 <div class="copy">
                     <p>Copyright de ns que</p>
                 </div>
