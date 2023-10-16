@@ -1,6 +1,11 @@
 <?php
 
 # Get variables
+$nombre = $_POST['nombre'];
+$descripcion = $_POST['descripcion'];
+$capacidad = $_POST['capacidad'];
+$tipo = $_POST['tipo'];
+$precio = $_POST['precio'];
 
 # Connect to database
 
@@ -9,9 +14,6 @@ $server = "localhost";
 $usuario = "root";
 $contra = "";
 $baseDeDatos = "hotel";
-
-// para tener la ruta principal del proyecto (desde donde se ejecuta)
-// echo $_SERVER['DOCUMENT_ROOT'];
 
 $conn = mysqli_connect($server, $usuario, $contra, $baseDeDatos);
 
@@ -22,8 +24,23 @@ if (!$conn) {
 
 # Querys
 
-# Hacer todo el resto
+$sql =
+"
+INSERT INTO habitaciones (id, nombre, descripcion, capacidad, tipo, precio)
+VALUES (DEFAULT,".$nombre.",".$descripcion.",".$capacidad.",".$tipo.",".$precio.")
+";
+mysqli_query($conn, $sql);
 
 ?>
+
+<?php include('../components/header.php') ?>
+
+<?php
+
+print_r ($_POST);
+
+?>
+
+<?php include('../components/footer.php') ?>
 
 

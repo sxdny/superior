@@ -18,12 +18,8 @@ if (!$conn) {
 
 // data de entrada y de salida
 
-session_start();
-
 $dateIn = $_POST['date-in'];
-$_SESSION['date-in'] = $dateIn;
 $dateOut = $_POST['date-out'];
-$_SESSION['date-out'] = $dateOut;
 
 // hacer SELECT de habitaciones
 // la date-in y la date-out me las guardo
