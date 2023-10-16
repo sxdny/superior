@@ -2,14 +2,14 @@
 
 ?>
 
-<?php include('components/header.php') ?>
+<?php include('../components/header.php') ?>
 
 <section class="container w-25 mt-5">
 
     <h2 class="mt-5">Hagamos una reserva!</h2>
 
     <!-- Form -->
-    <form class="mt-3" action="view_reservations.php" method="POST">
+    <form class="mt-3" action="../db/db_reservations_select.php" method="POST">
 
         <p>A continuación, introduzca la fecha de entrada y de salida.</p>
 
@@ -28,4 +28,4 @@
 
 </section>
 
-<?php include('components/footer.php') ?>
+<?php include('../components/footer.php') ?>
