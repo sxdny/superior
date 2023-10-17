@@ -54,6 +54,27 @@ $root = '/student047/dwes/';
                             <li><a class="dropdown-item" href="#">Ayuda</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Clientes (Administrador)
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href=<?php echo '"'. $root.'/forms/form_insert_client.php'.'"';?>>Insertar</a></li>
+
+                            <li><a class="dropdown-item disabled" href="#" disabled>Editar</a></li>
+
+                            <li><a class="dropdown-item" href=<?php echo '"'. $root.'/forms/form_select_client.php'.'"';?>>Ver</a></li>
+
+                            <li><a class="dropdown-item disabled" href="#" >Borrar / ocultar</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li><a class="dropdown-item" href="#">Ayuda</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
