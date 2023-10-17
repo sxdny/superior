@@ -11,7 +11,6 @@ $root = '/student047/dwes/';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Proyecto Hotel</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -42,11 +41,11 @@ $root = '/student047/dwes/';
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href=<?php echo '"'. $root.'/forms/form_insert_room.php'.'"';?>>Insertar</a></li>
 
-                            <li><a class="dropdown-item" href="#">Editar</a></li>
+                            <li><a class="dropdown-item disabled" href="#" disabled>Editar</a></li>
 
-                            <li><a class="dropdown-item" href="#">Ver</a></li>
+                            <li><a class="dropdown-item" href=<?php echo '"'. $root.'/forms/form_select_room.php'.'"';?>>Ver</a></li>
 
-                            <li><a class="dropdown-item" href="#">Borrar / ocultar</a></li>
+                            <li><a class="dropdown-item disabled" href="#" >Borrar / ocultar</a></li>
 
                             <li>
                                 <hr class="dropdown-divider">
@@ -57,7 +56,5 @@ $root = '/student047/dwes/';
                     </li>
                 </ul>
             </div>
-
-            <!-- TODO Hacer el menú de administrador. -->
         </div>
     </nav>

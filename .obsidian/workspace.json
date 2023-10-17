@@ -4,26 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "b085cdc17ece250f",
+        "id": "a81f8abbb807d5fc",
         "type": "tabs",
         "children": [
           {
-            "id": "3e89700800a4648c",
+            "id": "ac558a6d96128f6b",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "mates/Matemáticas simplificadas.pdf"
-              }
-            }
-          },
-          {
-            "id": "f295589f42d8523d",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "mates/Matemáticas simplificadas.pdf"
+                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -93,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "mates/Matemáticas simplificadas.pdf",
+                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "mates/Matemáticas simplificadas.pdf",
+                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "mates/Matemáticas simplificadas.pdf"
+                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md"
               }
             }
           },
@@ -165,10 +157,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3e89700800a4648c",
+  "active": "ac558a6d96128f6b",
   "lastOpenFiles": [
-    "mates/Importantes.md",
     "mates/Matemáticas simplificadas.pdf",
+    "mates/Importantes.md",
     "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
     "student047/images/card-image.jpeg",
     "student047/images",

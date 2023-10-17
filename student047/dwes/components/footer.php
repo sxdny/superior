@@ -1,4 +1,4 @@
-<footer class="align-items-center bg-dark py-3 mt-2 border-top fixed-bottom container-fluid">
+<footer class="align-items-center bg-dark py-3 mt-5 border-top container-fluid">
     <div class="col-md-4 ps-2">
         <span class="mb-3 mb-md-0 text-muted">© 2023 Proyecto Hotel</span>
     </div>

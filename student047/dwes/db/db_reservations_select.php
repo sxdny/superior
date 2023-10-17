@@ -38,7 +38,7 @@ mysqli_close($conn);
 <!-- Mostrar cada una de las habitaciones disponibles. -->
         <?php
         foreach ($habitaciones as $habitacion) {
-            # FIXME Arreglar el INSERT a hacer reservas.
+            # FIXME Arreglar el INSERT al hacer reservas (date-in, date-out).
             echo '
             <form class="col" action="db_reservations_insert.php" method="POST">
             <div class="card" style="width: 20rem;">
