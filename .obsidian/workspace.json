@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
+                "file": "gsdap2024/diw/repaso_examen_ud1-3.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "a325437f8fe2dbb0",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
+                "file": "gsdap2024/diw/repaso_examen_ud1-3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
+                "file": "gsdap2024/diw/repaso_examen_ud1-3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md"
+                "file": "gsdap2024/diw/repaso_examen_ud1-3.md"
               }
             }
           },
@@ -159,9 +160,10 @@
   },
   "active": "ac558a6d96128f6b",
   "lastOpenFiles": [
+    "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
+    "gsdap2024/diw/repaso_examen_ud1-3.md",
     "mates/Matemáticas simplificadas.pdf",
     "mates/Importantes.md",
-    "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
     "student047/images/card-image.jpeg",
     "student047/images",
     "student047/components/header.php",
