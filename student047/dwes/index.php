@@ -5,12 +5,19 @@
 <!-- Header de la página. -->
 <?php include('components/header.php') ?>
 
-<div class="container-fluid pt-5">
-    <div class="text-center pt-5">
-        <h1 class="display-2 pt-5">¡Bienvenido a mi hotel (el mejor)!</h1>
-        <a class="btn btn-primary btn-lg mt-3" href="forms/fs_select_reservations.php" role="button">Empezar a reservar</a>
+<div class="d-flex flex-column my-5 pt-5 align-items-center justify-content-center">
+    <div class="text-center mt-5">
+        <h1 class="display-5">¡Bienvenido a Internazionale Hotel!</h1>
+        <p>Para empezar una reserva, pulse el siguiente botón:</p>
+        <a class="btn btn-primary btn-md mt-3" href="forms/form_select_reservations.php" role="button">Empezar a
+            reservar</a>
+    </div>
+    <div class="container-fluid p-5">
+        <img class=" img-fluid border rounded" src="./images/hotel-unsplash.jpg" alt="" srcset="">
     </div>
 </div>
+
+
 
 <!-- Footer de la página. -->
 <?php include('components/footer.php') ?>

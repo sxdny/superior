@@ -51,7 +51,7 @@ if (isset($_POST['filtro'])) {
 
 <?php include('../components/header.php') ?>
 
-<section class="m-5">
+<section class="pt-5 m-5">
 
     <!-- Buscador -->
 
@@ -110,7 +110,7 @@ if (isset($_POST['filtro'])) {
             # FIXME Arreglar el INSERT al hacer reservas (date-in, date-out).
             echo '
             <form class="col" action="" method="POST">
-            <div class="card" style="width: 16rem;">
+            <div class="card" style="min-width: 16rem;">
                 <img src="../images/wlr.jpg" class="card-img-top" alt="Preview habitación.">
                 <div class="card-body">
                     <h5 class="card-title">' . $habitacion['nombre'] . '</h5>
