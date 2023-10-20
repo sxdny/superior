@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gsdap2024/diw/repaso_examen_ud1-3.md",
+                "file": "gsdap2024/daw/notas_daw.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "374c91b4ea59b3c2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Documentación Instalación Máquina Virtual.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -86,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gsdap2024/diw/repaso_examen_ud1-3.md",
+                "file": "Documentación Instalación Máquina Virtual.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gsdap2024/diw/repaso_examen_ud1-3.md",
+                "file": "Documentación Instalación Máquina Virtual.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gsdap2024/diw/repaso_examen_ud1-3.md"
+                "file": "Documentación Instalación Máquina Virtual.md"
               }
             }
           },
@@ -158,13 +171,25 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ac558a6d96128f6b",
+  "active": "374c91b4ea59b3c2",
   "lastOpenFiles": [
-    "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
+    "images/Pasted image 20231019152406.png",
+    "images/Pasted image 20231019152219.png",
+    "images/Pasted image 20231019152144.png",
+    "images/Pasted image 20231019151931.png",
+    "images/Pasted image 20231019151841.png",
+    "images/Pasted image 20231019151718.png",
+    "images/Pasted image 20231019151629.png",
+    "images/Pasted image 20231019151522.png",
+    "images/Pasted image 20231019151442.png",
+    "images/Pasted image 20231019151328.png",
+    "images/Pasted image 20231019151243.png",
+    "gsdap2024/daw/notas_daw.md",
+    "Documentación Instalación Máquina Virtual.md",
     "gsdap2024/diw/repaso_examen_ud1-3.md",
+    "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
     "mates/Matemáticas simplificadas.pdf",
     "mates/Importantes.md",
-    "student047/images/card-image.jpeg",
     "student047/images",
     "student047/components/header.php",
     "student047/components/footer.php",
@@ -189,20 +214,10 @@
     "gsdap2024/dwes/Conceptos GET y POST/Subir archivos al servidor.md",
     "gsdap2024/dwes/Notas_DWES.md",
     "gsdap2024/diw/notas_diw.md",
-    "images/Pasted image 20230925172407.png",
-    "images/Pasted image 20230925172352.png",
-    "images/Pasted image 20230925172329.png",
-    "images/Pasted image 20230925172242.png",
-    "images/Pasted image 20230925172228.png",
-    "images/Pasted image 20230925171827.png",
-    "gsdap2024/dwec/paginaweb_ejemplo/images/realuzi.jpg",
     "README.md",
     "gsdap2023/ed/notas_ed.md",
     "gsdap2024/pdaw/notas_proyecto.md",
-    "gsdap2024/daw/notas_daw.md",
     "Importante.md",
-    "2023-09-22.md",
-    "todos.md",
-    "file.md"
+    "2023-09-22.md"
   ]
 }

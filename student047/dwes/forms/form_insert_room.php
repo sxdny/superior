@@ -7,7 +7,7 @@ $root = '/student047/dwes/';
 
 <?php include('../components/header.php') ?>
 
-<section class="container-fluid w-50 h-100">
+<section class=" m-5 pt-5 h-100">
 
     <h3 class="mt-3">Insertar habitación <span class="badge bg-secondary">Admin</span></h3>
 

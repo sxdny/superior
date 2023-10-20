@@ -10,3 +10,5 @@ tags:
 ```js
 let hola = "Hola, me llamo";
 ```
+
+[[Documentación Instalación Máquina Virtual]]

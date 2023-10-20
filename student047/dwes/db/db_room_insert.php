@@ -35,7 +35,7 @@ $sql =
 
 <?php include('../components/header.php') ?>
 
-<div class="m-3">
+<div class="m-5 pt-5">
 
 <?php
 # Ejecutar query
