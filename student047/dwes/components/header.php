@@ -40,7 +40,7 @@ $root = '/student047/dwes/';
 
     .navbar {
         background-color: rgba(255, 255, 255, 0.61) !important;
-        backdrop-filter: blur(15px) !important;
+        backdrop-filter: blur(35px) !important;
         border-bottom: 1px solid white !important;
     }
 </style>
@@ -66,14 +66,9 @@ $root = '/student047/dwes/';
                             Clientes (Administrador)
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href=<?php echo '"' . $root . '/forms/form_insert_client.php' . '"'; ?>>Insertar</a></li>
+                            <li><a class="dropdown-item" href=<?php echo '"' . $root . '/forms/form_insert_client.php' . '"'; ?>>Nuevo cliente</a></li>
 
-                            <li><a class="dropdown-item disabled" href="#" disabled>Editar</a></li>
-
-                            <li><a class="dropdown-item" href=<?php echo '"' . $root . '/forms/form_select_client.php' . '"'; ?>>Ver</a></li>
-
-                            <li><a class="dropdown-item disabled" href="#">Borrar / ocultar</a></li>
-
+                            <li><a class="dropdown-item" href=<?php echo '"' . $root . '/forms/form_select_client.php' . '"'; ?>>Listar clientes</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

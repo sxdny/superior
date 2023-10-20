@@ -36,7 +36,7 @@ mysqli_close($conn);
 
     <h3 class="mt-3">Editar datos cliente <span class="badge bg-secondary">Admin</span></h3>
 
-    <form class="" action="../db/db_room_insert.php" method="POST">
+    <form class="" action="../db/db_update_client.php" method="POST">
         <div class="mb-3">
             <label class="form-label">Nombre</label>
             <input type="text" class="form-control" name="nombre" aria-describedby="nombre" value=<?php echo "'" . $client['nombre'] . "'" ?> required>
@@ -53,16 +53,18 @@ mysqli_close($conn);
             <label class="form-label">Teléfono</label>
             <input type="number" class="form-control" name="telefono" aria-describedby="telefono" value=<?php echo "'" . $client['telefono'] . "'" ?> required>
         </div>
+
+        <input type="number" hidden value=<?php echo "'".$client['id']."'"?> name="client-id">
+
         <div class="mb-3 d-flex flex-column">
             <label class="form-label">Método de pago</label>
-            <!-- TODO If para determinar cuál tengo ya elegido -->
             <?php 
 
             if($client['metodo_pago'] == 'tarjeta' || $client['metodo_pago'] == 'Tarjeta' || $client['metodo_pago'] == 'Transferencia') {
                 echo 
                 '
-                <select class="form-label form-select" name="metodo-de-pago" required>
-                    <option value selected="tarjeta">Tarjeta</option>
+                <select class="form-label form-select" name="metodo-de-pago">
+                    <option selected value="tarjeta">Tarjeta</option>
                     <option value="paypal">PayPal</option>
                     <option value="efectivo">Efectivo</option>
                 </select>
@@ -71,9 +73,9 @@ mysqli_close($conn);
             if($client['metodo_pago'] == 'paypal'|| $client['metodo_pago'] == 'PayPal') {
                 echo 
                 '
-                <select class="form-label form-select" name="metodo-de-pago" required>
+                <select class="form-label form-select" name="metodo-de-pago">
                     <option value="tarjeta">Tarjeta</option>
-                    <option value selected="paypal">PayPal</option>
+                    <option selected value="paypal">PayPal</option>
                     <option value="efectivo">Efectivo</option>
                 </select>
                 ';
@@ -81,10 +83,10 @@ mysqli_close($conn);
             if($client['metodo_pago'] == 'efectivo' || $client['metodo_pago'] == 'Efectivo') {
                 echo 
                 '
-                <select class="form-label form-select" name="metodo-de-pago" required>
+                <select class="form-label form-select" name="metodo-de-pago">
                     <option value="tarjeta">Tarjeta</option>
                     <option value="paypal">PayPal</option>
-                    <option value selected="efectivo">Efectivo</option>
+                    <option selected value="efectivo">Efectivo</option>
                 </select>
                 ';
             }
@@ -92,8 +94,9 @@ mysqli_close($conn);
             ?>
         </div>
 
+        <!-- TODO Botón de eliminar -->
+        <!-- TODO Pop-up botón de eliminar -->
         <button type="submit" class="btn btn-primary">Actualizar</button>
-
     </form>
 
 </section>
