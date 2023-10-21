@@ -1,9 +1,9 @@
 <?php
 
-# TODO Hacer que esto también funciones con los includes
+# TODO hacer que esto también funciones con los includes
 $root = '/student047/dwes/';
 
-// datos para la conexión a la base de datos
+// credenciales para el acceso a la base de datos
 $server = "localhost";
 $usuario = "root";
 $contra = "";
@@ -11,19 +11,14 @@ $baseDeDatos = "hotel";
 
 $conn = mysqli_connect($server, $usuario, $contra, $baseDeDatos);
 
-// mensaje si ha funcionado o no la conexión a la base de datos
+// comprobar conexión a la base de datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// hacer SELECT de habitaciones
-
-// Captura valor de las variables
-// Para evitar el mensaje de error
+// por si 'filtro' no está definido
 if (isset($_POST['filtro'])) {
     $filtro = $_POST['filtro'];
-
-    // Cambio del SQL
 
     if ($filtro == 'All') {
         $sql =
@@ -31,41 +26,36 @@ if (isset($_POST['filtro'])) {
     } else {
         $sql =
             "SELECT * FROM habitaciones
-        WHERE estado = '" . $filtro . "';";
+            WHERE estado = '" . $filtro . "';";
     }
 
     $result = mysqli_query($conn, $sql);
     $habitaciones = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
     mysqli_close($conn);
 
 } else {
     $sql = "SELECT * FROM habitaciones;";
     $result = mysqli_query($conn, $sql);
     $habitaciones = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
     mysqli_close($conn);
 }
-
 ?>
 
 <?php include('../components/header.php') ?>
-
 <section class="pt-5 m-5">
-
-    <!-- Buscador -->
 
     <div class="d-flex justify-content-between">
         <div class="heading">
             <h3 class="mt-3">Ver habitaciones <span class="badge bg-secondary">Admin</span></h3>
         </div>
+        <!-- menú filtrado -->
+        <!-- TODO hacer submenús -->
+        <!-- TODO barra de búsqueda con AJAX? -->
         <div class="filter">
             <div class="dropdown">
                 <form class="d-flex" action="form_select_room.php" method="POST">
                     <select class="form-select" aria-label="Default select example" name="filtro" required>
                         <option value="" selected>Filtrar por</option>
-                        <!-- TODO Hacer submenús -->
-                        <!-- En vez de Filtrar por, separarlo y ya -->
                         <option value="All">Todas las habitaciones</option>
                         <option value="Available">Disponibles</option>
                         <option value="Booked">Reservadas</option>
@@ -98,16 +88,11 @@ if (isset($_POST['filtro'])) {
         ?>
     </div>
 
-    <!-- Filtrar por... y Ver -->
-    <!-- Menú de búsqueda personalizada -->
-
-    <!-- Resultados -->
-
+    <!-- mostrar habitaciones -->
+    <!-- TODO cambiar colores etiquetas dependiendo del estado -->
     <div class="container-fluid my-5 d-flex row gap-3">
-        <!-- Mostrar cada una de las habitaciones disponibles. -->
         <?php
         foreach ($habitaciones as $habitacion) {
-            # FIXME Arreglar el INSERT al hacer reservas (date-in, date-out).
             echo '
             <form class="col" action="" method="POST">
             <div class="card" style="min-width: 16rem;">
@@ -115,7 +100,6 @@ if (isset($_POST['filtro'])) {
                 <div class="card-body">
                     <h5 class="card-title">' . $habitacion['nombre'] . '</h5>
                     <p class="card-text">' . $habitacion['descripcion'] . '</p>
-                    <!-- TODO If para mostrar otros colores -->
                     <span class="badge text-bg-success">' . $habitacion['estado'] . '</span>
                     <hr>
                     <p> <b> Características avanzadas: </b> </p>
@@ -136,5 +120,4 @@ if (isset($_POST['filtro'])) {
     </div>
 
 </section>
-
 <?php include('../components/footer.php') ?>

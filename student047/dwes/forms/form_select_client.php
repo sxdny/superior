@@ -1,54 +1,22 @@
 <?php
 
-# TODO Hacer que esto también funciones con los includes
+# TODO hacer que esto también funciones con los includes?
 $root = '/student047/dwes/';
 
-// datos para la conexión a la base de datos
+// credenciales acceso a la base de datos
 $server = "localhost";
 $usuario = "root";
 $contra = "";
 $baseDeDatos = "hotel";
-
 $conn = mysqli_connect($server, $usuario, $contra, $baseDeDatos);
 
-// mensaje si ha funcionado o no la conexión a la base de datos
+// comprobar conexión a la base de datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// hacer SELECT de habitaciones
-
-// Captura valor de las variables
-
-// Menú de filtrado
-
-// if (isset($_POST['filtro'])) {
-//     $filtro = $_POST['filtro'];
-
-//     // Cambio del SQL
-
-//     if ($filtro == 'All') {
-//         $sql =
-//             "SELECT * FROM clients;";
-//     } else {
-//         $sql =
-//             "SELECT * FROM habitaciones
-//         WHERE estado = '" . $filtro . "';";
-//     }
-
-//     $result = mysqli_query($conn, $sql);
-//     $habitaciones = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-//     mysqli_close($conn);
-
-// } else {
-//     $sql = "SELECT * FROM habitaciones;";
-//     $result = mysqli_query($conn, $sql);
-//     $habitaciones = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-//     mysqli_close($conn);
-// }
-
+// query seleccionar clientes
+// TODO cambiar esto para filtrado
 $sql = "SELECT * FROM clientes;";
 $result = mysqli_query($conn, $sql);
 $clients = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -58,11 +26,10 @@ mysqli_close($conn);
 ?>
 
 <?php include('../components/header.php') ?>
-
 <section class="pt-5 m-5">
 
-    <!-- Buscador -->
-
+    <!-- menú de filtrado -->
+    <!-- TODO hacer menú de filtrado -->
     <div class="d-flex justify-content-between">
         <div class="heading">
             <h3 class="mt-3">Ver clientes <span class="badge bg-secondary">Admin</span></h3>
@@ -72,8 +39,6 @@ mysqli_close($conn);
                 <form class="d-flex" action="form_select_room.php" method="POST">
                     <select disabled class="form-select" aria-label="Default select example" name="filtro" required>
                         <option value="" selected>Filtrar por</option>
-                        <!-- TODO Hacer submenús -->
-                        <!-- En vez de Filtrar por, separarlo y ya -->
                         <option value="All">Todas las habitaciones</option>
                         <option value="Available">Disponibles</option>
                         <option value="Booked">Reservadas</option>
@@ -86,33 +51,9 @@ mysqli_close($conn);
 
     <div class="info">
         <?php
-        // if (isset($_POST['filtro'])) {
-        //     if ($filtro == 'All') {
-        //         echo
-        //             "<p> Viendo: <span class='badge text-bg-info'>Todas las habitaciones</span></p>";
-        //     }
-        //     if ($filtro == 'Available') {
-        //         echo
-        //             "<p> Viendo: <span class='badge text-bg-info'>Todas las habitaciones disponibles</span></p>";
-        //     }
-        //     if ($filtro == 'Booked') {
-        //         echo
-        //             "<p> Viendo: <span class='badge text-bg-info'>Todas las habitaciones reservadas</span></p>";
-        //     }
-        // } else {
-        //     echo
-        //         "<p> Viendo: <span class='badge text-bg-info'>Todas las habitaciones</span></p>";
-        // }
+            // mostrar info filtrado
         ?>
     </div>
-
-    <!-- Filtrar por... y Ver -->
-    <!-- Menú de búsqueda personalizada -->
-
-    <!-- TODO AJAX Search -->
-    <!-- https://www.cloudways.com/blog/live-search-php-mysql-ajax/ -->
-
-    <!-- Resultados -->
 
     <div class="container-fluid my-5 d-flex row gap-3">
         <!-- Mostrar cada una de las habitaciones disponibles. -->
@@ -145,6 +86,7 @@ mysqli_close($conn);
             </div>
             </form>
             <!-- Modal -->
+            <!-- Generar un modal para cada cliente -->
                     <div class="modal fade" id="exampleModal'.$client['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <form class="modal-dialog-centered"action="../db/db_client_delete.php" method="POST">
                             <div class="modal-dialog">
@@ -170,7 +112,5 @@ mysqli_close($conn);
         }
         ?>
     </div>
-
 </section>
-
 <?php include('../components/footer.php') ?>

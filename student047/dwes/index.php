@@ -1,11 +1,6 @@
-<?php
-
-?>
-
-<!-- Header de la página. -->
 <?php include('components/header.php') ?>
 
-<div class="d-flex flex-column my-5 pt-5 align-items-center justify-content-center">
+<div class="d-flex flex-column mx-3 my-5 pt-5 align-items-center justify-content-center">
     <div class="text-center mt-5">
         <h1 class="display-5">¡Bienvenido a Internazionale Hotel!</h1>
         <p>Para empezar una reserva, pulse el siguiente botón:</p>
@@ -17,7 +12,4 @@
     </div>
 </div>
 
-
-
-<!-- Footer de la página. -->
 <?php include('components/footer.php') ?>

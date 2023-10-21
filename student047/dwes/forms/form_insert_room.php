@@ -1,17 +1,13 @@
 <?php
-
-# TODO Hacer que esto también funciones con los includes
+# TODO hacer que esto también funciones con los includes?
 $root = '/student047/dwes/';
-
 ?>
 
 <?php include('../components/header.php') ?>
-
 <section class=" m-5 pt-5 h-100">
 
     <h3 class="mt-3">Insertar habitación <span class="badge bg-secondary">Admin</span></h3>
 
-    <!-- Form -->
     <form class="" action="../db/db_room_insert.php" method="POST">
         <p>Introduzca los datos de la habitación:</p>
         <div class="mb-3">
@@ -40,8 +36,6 @@ $root = '/student047/dwes/';
             <label class="form-label">Precio por noche</label>
             <input type="number" class="form-control" name="precio" aria-describedby="precio" required>
         </div>
-
-        <!-- TODO Meter el input del 'estado de la habitación' -->
         <div class="mb-3 d-flex flex-column">
             <label class="form-label">Estado</label>
             <select class="form-label form-select" name="estado" required>
@@ -57,5 +51,4 @@ $root = '/student047/dwes/';
     </form>
 
 </section>
-
 <?php include('../components/footer.php') ?>

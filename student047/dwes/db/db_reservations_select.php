@@ -1,29 +1,25 @@
 <?php
 
-// datos para la conexión a la base de datos
+$root = '/student047/dwes/';
+
+// credenciales acceso base de datos
 $server = "localhost";
 $usuario = "root";
 $contra = "";
 $baseDeDatos = "hotel";
 
-// para tener la ruta principal del proyecto (desde donde se ejecuta)
-// echo $_SERVER['DOCUMENT_ROOT'];
-
 $conn = mysqli_connect($server, $usuario, $contra, $baseDeDatos);
 
-// mensaje si ha funcionado o no la conexión a la base de datos
+// comprobar conexión a la base de datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// data de entrada y de salida
-
+// obtener data entrada y de salida
 $dateIn = $_POST['date-in'];
 $dateOut = $_POST['date-out'];
 
-// hacer SELECT de habitaciones
-// la date-in y la date-out me las guardo
-
+// FIXME filtrar por habitaciones disponibles
 $sql = "SELECT * FROM habitaciones;";
 $result = mysqli_query($conn, $sql);
 $habitaciones = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -35,10 +31,8 @@ mysqli_close($conn);
 <?php include('../components/header.php') ?>
 
 <section class="container-fluid my-5 d-flex row gap-3 justify-content-center">
-<!-- Mostrar cada una de las habitaciones disponibles. -->
         <?php
         foreach ($habitaciones as $habitacion) {
-            # FIXME Arreglar el INSERT al hacer reservas (date-in, date-out).
             echo '
             <form class="col" action="db_reservations_insert.php" method="POST">
             <div class="card" style="width: 20rem;">

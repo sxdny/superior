@@ -1,5 +1,6 @@
 <?php
 
+// directorio root para enlaces
 $root = '/student047/dwes/';
 
 ?>
@@ -10,12 +11,14 @@ $root = '/student047/dwes/';
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TODO cambiar título dependiendo de donde estemos -->
     <title>Internazionale</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <style>
+
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
     * {
@@ -29,41 +32,36 @@ $root = '/student047/dwes/';
         margin: 0;
     }
 
-    .full-screen-div {
-
-        min-height: 100%;
-        min-height: 100%;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
-
     .navbar {
         background-color: rgba(255, 255, 255, 0.61) !important;
         backdrop-filter: blur(35px) !important;
         border-bottom: 1px solid white !important;
     }
+
 </style>
 
 <body>
 
-    <!-- Navbar -->
+    <!-- navbar menu -->
     <nav class="navbar fixed-top navbar-expand-lg bg-light px-4">
         <div class="container-fluid">
             <a class="navbar-brand" href=<?php echo '"' . $root . 'index.php' . '"'; ?>>Internazionale</a>
 
+            <!-- navigation button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- menu items -->
             <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav gap-2">
-                    <!-- TODO Juntar los dropdown con los droprights o lo que sea. -->
+
+                    <!-- TODO juntar los dropdownd con los droprights (hacerlo todo junto) -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Clientes (Administrador)
+                            Clientes (Admin)
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href=<?php echo '"' . $root . '/forms/form_insert_client.php' . '"'; ?>>Nuevo cliente</a></li>
@@ -73,15 +71,17 @@ $root = '/student047/dwes/';
                                 <hr class="dropdown-divider">
                             </li>
 
+                            <!-- TODO poner manual usuario -->
                             <li><a class="dropdown-item" href="#">Ayuda</a></li>
                         </ul>
                     </li>
-                    <!-- Drodown menu -->
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Habitaciones (Administrador)
+                            Habitaciones (Admin)
                         </a>
+                        <!-- TODO hacer apartado Editar -->
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href=<?php echo '"' . $root . '/forms/form_insert_room.php' . '"'; ?>>Insertar</a></li>
 
@@ -101,11 +101,11 @@ $root = '/student047/dwes/';
                     <li class="nav-item">
                         <a class="nav-link" href=<?php echo '"' . $root . '/forms/form_select_reservations.php' . '"'; ?>>Reservar</a>
                     </li>
+                    <!-- TODO hacer inicio de sesión -->
                     <li class="nav-item">
                         <a class="btn btn-primary disabled" role="button" href=<?php echo '"' . $root . '/forms/form_select_reservations.php' . '"'; ?>>Iniciar Sesión</a>
                     </li>
                 </ul>
-            </div>
-            
+            </div> 
         </div>
     </nav>

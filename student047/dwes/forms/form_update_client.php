@@ -1,9 +1,9 @@
 <?php
 
-# TODO Hacer que esto también funciones con los includes
+# TODO hacer que esto también funciones con los includes?
 $root = '/student047/dwes/';
 
-// datos para la conexión a la base de datos
+// credenciales para el acceso a la base de datos
 $server = "localhost";
 $usuario = "root";
 $contra = "";
@@ -11,19 +11,18 @@ $baseDeDatos = "hotel";
 
 $conn = mysqli_connect($server, $usuario, $contra, $baseDeDatos);
 
-// mensaje si ha funcionado o no la conexión a la base de datos
+// comprobar conexión a la base de datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Get client id to update
+// obtener la id del cliente a editar
 $client_id = $_POST['client_id_update'];
 
-// Obtener información del cliente a editar
+// obtener información del cliente a editar
 $sql = "SELECT * FROM clientes WHERE id = " . $client_id . ";";
 $result = mysqli_query($conn, $sql);
 $clients = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
 $client = $clients[0];
 
 mysqli_close($conn);
@@ -90,12 +89,9 @@ mysqli_close($conn);
                 </select>
                 ';
             }
-
             ?>
         </div>
 
-        <!-- TODO Botón de eliminar -->
-        <!-- TODO Pop-up botón de eliminar -->
         <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
 
