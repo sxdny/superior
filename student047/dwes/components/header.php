@@ -38,6 +38,10 @@ $root = '/student047/dwes/';
         border-bottom: 1px solid white !important;
     }
 
+    code {
+        font-family: monospace !important;
+    }
+
 </style>
 
 <body>
@@ -67,12 +71,6 @@ $root = '/student047/dwes/';
                             <li><a class="dropdown-item" href=<?php echo '"' . $root . '/forms/form_insert_client.php' . '"'; ?>>Nuevo cliente</a></li>
 
                             <li><a class="dropdown-item" href=<?php echo '"' . $root . '/forms/form_select_client.php' . '"'; ?>>Listar clientes</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-
-                            <!-- TODO poner manual usuario -->
-                            <li><a class="dropdown-item" href="#">Ayuda</a></li>
                         </ul>
                     </li>
 
@@ -91,15 +89,14 @@ $root = '/student047/dwes/';
 
                             <li><a class="dropdown-item disabled" href="#">Borrar / ocultar</a></li>
 
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-
-                            <li><a class="dropdown-item" href="#">Ayuda</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href=<?php echo '"' . $root . '/forms/form_select_reservations.php' . '"'; ?>>Reservar</a>
+                    </li>
+                    <!-- TODO hacer dropdown con varios links directos -->
+                    <li class="nav-item">
+                        <a class="nav-link" href=<?php echo '"' . $root . '/manuals/help.php' . '"'; ?>>Ayuda</a>
                     </li>
                     <!-- TODO hacer inicio de sesión -->
                     <li class="nav-item">
