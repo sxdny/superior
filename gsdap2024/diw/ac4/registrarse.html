@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Articoders | Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+
+</head>
+
+<!-- Style de la actividad 4 -->
+<style>
+    @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter/Inter.ttf");
+    }
+
+    /* Cambiar fondo de pantalla. */
+    body {
+        background-image: url("images/drake_zesty.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        height: 100vh;
+
+        /* por si no se carga la img */
+        background-color: #141414;
+    }
+
+    p[type="subtitulo"] {
+        color: rgb(190, 190, 190);
+    }
+
+    section[type="blur-bg-section"] {
+        background-color: rgba(190, 190, 190, 0.5);
+        backdrop-filter: blur(8px);
+
+        /* safari */
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 5rem;
+    }
+
+    input[type=text] {
+        padding: 1.5rem 1rem;
+    }
+</style>
+
+<body class="justify-content-center" style="background-color: #E4F4FF">
+
+    <!-- Navbar -->
+
+    <nav style="border-bottom: 1px solid #5c5c5c;" class="navbar navbar-expand-lg bg-body py-3 px-5">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="#">Articoders</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="registrarse.html">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Escritores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tópicos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Formulario -->
+
+    <section type="blur-bg-section" class="form p-5 my-5 container-fluid w-75 d-flex flex-column text-center">
+        <h2 class="display-2">Únete ya</h2>
+        <div class="form">
+            <form action="" class="d-flex flex-column gap-3 mt-5">
+                <input type="text" name="" placeholder="Correo electrónico">
+                <input type="text" name="" placeholder="Contraseña">
+                <input type="text" name="" placeholder="Confirmar contraseña">
+
+                <!-- Separar el btn -->
+                <button>Hola soy un boton </button>
+
+                <!-- Poner aquí el avatar picker -->
+                <!-- Quitar el Drake zesty del fondo y ponerlo -->
+                <!-- En el image picker junto a otros. -->
+
+                <!-- Registrarse / Iniciar sesión con... -->
+            </form>
+        </div>
+    </section>
+
+    <script src=" https://kit.fontawesome.com/e93ba2c81b.js" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
