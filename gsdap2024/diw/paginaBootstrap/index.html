@@ -11,7 +11,7 @@
 <body>
 
     <nav
-        class="d-md-flex flex-row text-center text-md-start justify-content-between px-5 align-items-center py-3 border border-3">
+        class="d-flex flex-md-row flex-column text-center text-md-start justify-content-between px-5 align-items-center py-3 border border-3">
         <div class="logo w-75 align-items-center">
             <h1 class="m-0">Esto es un logo</h1>
         </div>
@@ -25,16 +25,37 @@
 
     </nav>
 
-    <div style="height: 100vh;" class="row border border-1">
+    <div class="row">
 
-        <div class="col border border-1 row">
-            <div class="col h-100 border border-1 w-100"></div>
-            <div class="col h-100 border border-1 w-100"></div>
+        <div class="col-md border border-5 row h-100">
+            <div class="col-sm h-100 border border-5 w-100">
+                <h2>Hola, se supone que estoy a la izquierda</h2>
+            </div>
+            <div class="col-sm h-100 border border-5 w-100">
+                <h2>Hola, se supone que estoy a la derecha</h2>
+            </div>
         </div>
-        <div class="col">
 
+        <div class="col-md border border-5">
+            <h2>y yo creo que me quedo abajo</h2>
         </div>
 
+    </div>
+
+    <div class="">
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>DNI</th>
+            </tr>
+            <tr>
+                <td>Sidney</td>
+                <td>Silva Braz de Oliveira</td>
+                <td>Y209427P</td>
+            </tr>
+
+        </table>
     </div>
 
 </body>
