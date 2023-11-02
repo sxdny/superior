@@ -94,6 +94,10 @@
         height: 10rem;
         border-radius: 5rem;
         cursor: pointer;
+        /* Box shadow para las imagenes */
+        box-shadow: 2px 2px 44px -7px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 2px 2px 44px -7px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 2px 2px 44px -7px rgba(0, 0, 0, 0.75);
     }
 
     img:active {
@@ -134,7 +138,31 @@
         width: 100px;
         height: 100px;
         border-radius: 5rem;
+        animation-name: rotationDrake;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+
+        /* Transitions para que al hacer hover o escoga la imagen haga un efecto chulo. */
         transition: .5s ease;
+    }
+
+    /* Animación usada */
+    @keyframes rotationDrake {
+        from {
+            -moz-transform: rotate(0deg) skew(0deg, 0deg);
+            -webkit-transform: rotate(0deg) skew(0deg, 0deg);
+            -o-transform: rotate(0deg) skew(0deg, 0deg);
+            -ms-transform: rotate(0deg) skew(0deg, 0deg);
+            transform: rotate(0deg) skew(0deg, 0deg);
+        }
+
+        to {
+            -moz-transform: rotate(360deg) skew(0deg, 0deg);
+            -webkit-transform: rotate(360deg) skew(0deg, 0deg);
+            -o-transform: rotate(360deg) skew(0deg, 0deg);
+            -ms-transform: rotate(360deg) skew(0deg, 0deg);
+            transform: rotate(360deg) skew(0deg, 0deg);
+        }
     }
 
     .avatar-picker input[type="radio"]:checked+label {
@@ -173,6 +201,10 @@
         color: #141414 !important;
         border: none !important;
         border-radius: 0 !important;
+        /* Box shadow para el botón de registrarse */
+        box-shadow: 2px 2px 44px -7px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 2px 2px 44px -7px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 2px 2px 44px -7px rgba(0, 0, 0, 0.75);
     }
 
     .login-p {
@@ -211,15 +243,16 @@
 
     <!-- Formulario -->
 
-    <section class="form w-100 p-5 mt-1 container-fluid d-flex flex-column text-center">
+    <section
+        class="form py-5 px-2 mt-1 container-fluid d-flex flex-column text-center align-items-center justify-content-center">
         <h1 class="align-self-center display-1">Únete ya</h1>
-        <div class="align-self-center w-auto text-center">
+        <div class="">
             <form action="#" method="GET"
-                class="d-flex flex-column gap-4 justify-content-center align-content-center text-center mt-5">
-                <input type="text" name="" placeholder="Correo electrónico">
+                class="d-flex flex-column gap-4 justify-content-center align-content-center text-center my-5 w-md-100">
+                <input type="text" name="" placeholder="Correo electrónico" class="">
                 <div class="row m-0 gap-4">
-                    <input class="col w-100" type="password" name="" placeholder="Contraseña">
-                    <input class="col w-100 py-4" type="password" name="" placeholder="Confirmar contraseña">
+                    <input class="col-md w-100 py-4" type="password" name="" placeholder="Contraseña">
+                    <input class="col-md w-100 py-4" type="password" name="" placeholder="Confirmar contraseña">
                 </div>
 
                 <p class="text-secondary">Elige un avatar</p>
