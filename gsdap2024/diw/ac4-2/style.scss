@@ -1,0 +1,49 @@
+// para importar las variables y no tener todo aquí mezclado
+@import "./scss/_variables.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+    font-family: "Inter", sans-serif !important;
+}
+
+/*Estilos para navbar*/
+.navbar {
+    background-color: $navbar-bg;
+    backdrop-filter: $blur-bg-filter;
+    color: $navbar-color;
+    background-blend-mode: overlay;
+
+    /* para safari */
+    -webkit-backdrop-filter: $blur-bg-filter;
+    font-size: $navbar-font-size;
+}
+
+body {
+    width: 100%;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .post-info {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        text-align: center;
+        margin: 3rem 2rem;
+        width: $container-width;
+
+        p {
+            font-size: $text-size;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 4rem;
+        }
+    }
+}
