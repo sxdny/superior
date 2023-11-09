@@ -1,10 +1,11 @@
 // para importar las variables y no tener todo aquí mezclado
 @import "./scss/_variables.scss";
+@import "node_modules/bootstrap/scss/bootstrap.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 * {
-    font-family: "Inter", sans-serif !important;
+    font-family: "Inter", sans-serif;
 }
 
 /*Estilos para navbar*/
@@ -24,6 +25,7 @@ body {
 }
 
 section {
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,13 +39,98 @@ section {
         margin: 3rem 2rem;
         width: $container-width;
 
+        .display-2 {
+            font-weight: bold !important;
+        }
+
         p {
             font-size: $text-size;
         }
 
         h1 {
             font-weight: 600;
-            font-size: 4rem;
         }
+    }
+
+    .img-container {
+        margin: 0rem 2rem !important;
+
+        img {
+            border: 2px solid black;
+        }
+
+        p {
+            color: darkgray;
+            align-self: center;
+            font-size: 0.813rem;
+            padding-top: 1rem;
+            font-style: italic;
+        }
+    }
+
+    .art-content {
+
+        width: 80vw;
+
+        p.art-text {
+            margin-top: 1.5rem;
+            font-size: 21px;
+            // serif para una mejor lectura
+            font-family: serif !important;   
+            text-align: justify;
+            letter-spacing: 130%;
+            line-height: 2.2rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            margin-top: 2rem;
+            font-weight: bold;
+        }
+
+
+    }
+
+    .art-actions {
+        width: 20vw;
+        i {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+
+    .followers {
+        font-size: 13px;
+    }
+}
+
+.follow {
+        background-color: #222;
+        color: white;
+        border: 0;
+        padding: 1em 4em;
+}
+
+footer {
+    background-color: #222;
+    color: darkgray;
+}
+
+
+// cuando la pantalla sea igual o menor a 960px...
+@media (max-width: 960px) {
+    section {
+        h1 {
+            width: 90% !important;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .art-actions {
+        width: 60vw !important;
     }
 }

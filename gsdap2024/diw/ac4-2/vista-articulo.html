@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articoders | Vista de artículo</title>
+    <!-- Styles and css -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
@@ -48,19 +51,162 @@
     <!-- Vista de artículo -->
     <section>
 
-        <!-- Información del post (título, autor, etc.) -->
+        <!-- Información del artículo (título, autor, etc.) -->
         <div class="post-info">
-            <p>Autor del artículo</p>
-            <p>Data de publicación  ·  Tiempo de lectura</p>
-            <h1>Esto es un título largo para un artículo.</h1>
+            <header>
+                <p>Autor del artículo</p>
+                <p>Data de publicación · Tiempo de lectura</p>
+            </header>
+
+            <h1 class="display-2 w-75 align-self-center">Esto es un título largo para un artículo.</h1>
             <p>Esto es mucho texto para que asi al verse más grande se vea así.</p>
         </div>
 
-        <img src="https://placehold.co/600x400" alt="" srcset="">
+        <!-- Imagen del artículo -->
+        <div class="img-container d-flex flex-column">
+            <img class="img-fluid" src="https://placehold.co/1080x720" alt="" srcset="">
+            <p>Image description</p>
+        </div>
+
+        <!-- Contenido del articulo. -->
+        <div class="art-content">
+            <p class="art-text align-content-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa molestiae incidunt voluptas facilis saepe?
+                Nobis
+                corrupti rerum omnis pariatur dolore voluptates quibusdam placeat dicta magnam a assumenda repellat
+                voluptate maxime
+                nulla aliquid beatae nam eum, ipsum temporibus recusandae, minus doloremque molestias. Inventore
+                reprehenderit ipsam
+                odit iure, facilis voluptatum dolore et cum optio ex laudantium, exercitationem deserunt quas soluta
+                expedita
+                explicabo ipsa nisi ad quis odio ea. Quisquam expedita hic illum qui consequuntur ipsum praesentium,
+                quas
+                doloremque. Hic optio exercitationem assumenda? Laudantium harum temporibus, accusamus cupiditate
+                perspiciatis ea,
+                totam, inventore dolorem hic unde ratione suscipit facilis dolorum amet. Quis est vel optio iure
+                nesciunt asperiores
+                fuga rerum recusandae accusamus nam temporibus, voluptatum nemo aut inventore ullam dolor animi quos
+                reprehenderit
+                ipsam laudantium necessitatibus! Ducimus autem veniam doloremque quibusdam non, maxime reiciendis labore
+                accusantium
+                in soluta eveniet debitis, laborum architecto eum minima et. Saepe dicta dolores, expedita assumenda
+                maxime non
+                nulla repellat quo cupiditate consectetur neque sint sunt perferendis a aliquid ad facilis aspernatur
+                reprehenderit
+                quidem natus. Voluptatum dolores recusandae consequuntur sequi. Labore atque fuga dolorum voluptatum,
+                nesciunt
+                ratione aperiam veniam possimus quisquam magnam sunt velit dignissimos non deserunt. Vitae,
+                exercitationem molestias
+                nulla quas magnam, obcaecati corrupti culpa velit totam cumque voluptates illum ullam id inventore
+                voluptate quam
+                incidunt doloribus, dolorem eos officia perferendis iste asperiores! Perspiciatis, hic beatae! Veritatis
+                quo ad iure
+                deserunt nisi officia ea explicabo aperiam molestias vel velit aut esse, consequatur laborum natus
+                temporibus
+                doloribus numquam exercitationem expedita? Alias quo illo consequuntur nostrum nulla tenetur. Debitis,
+            </p>
+            <h2>Heading 2</h2>
+
+            <p class="art-text align-content-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa molestiae incidunt voluptas facilis saepe?
+                Nobis
+                corrupti rerum omnis pariatur dolore voluptates quibusdam placeat dicta magnam a assumenda repellat
+                voluptate maxime
+                nulla aliquid beatae nam eum, ipsum temporibus recusandae, minus doloremque molestias. Inventore
+                reprehenderit ipsam
+                odit iure, facilis voluptatum dolore et cum optio ex laudantium, exercitationem deserunt quas soluta
+                expedita
+                explicabo ipsa nisi ad quis odio ea. Quisquam expedita hic illum qui consequuntur ipsum praesentium,
+                quas
+                doloremque. Hic optio exercitationem assumenda? Laudantium harum temporibus, accusamus cupiditate
+                perspiciatis ea,
+                totam, inventore dolorem hic unde ratione suscipit facilis dolorum amet. Quis est vel optio iure
+                nesciunt asperiores
+                fuga rerum recusandae accusamus nam temporibus, voluptatum nemo aut inventore ullam dolor animi quos
+                reprehenderit
+                ipsam laudantium necessitatibus! Ducimus autem veniam doloremque quibusdam non, maxime reiciendis labore
+                accusantium
+                in soluta eveniet debitis, laborum architecto eum minima et. Saepe dicta dolores, expedita assumenda
+                maxime non
+                nulla repellat quo cupiditate consectetur neque sint sunt perferendis a aliquid ad facilis aspernatur
+                reprehenderit
+                quidem natus. Voluptatum dolores recusandae consequuntur sequi. Labore atque fuga dolorum voluptatum,
+                nesciunt
+                ratione aperiam veniam possimus quisquam magnam sunt velit dignissimos non deserunt. Vitae,
+                exercitationem molestias
+                nulla quas magnam, obcaecati corrupti culpa velit totam cumque voluptates illum ullam id inventore
+                voluptate quam
+                incidunt doloribus, dolorem eos officia perferendis iste asperiores! Perspiciatis, hic beatae! Veritatis
+                quo ad iure
+                deserunt nisi officia ea explicabo aperiam molestias vel velit aut esse, consequatur laborum natus
+                temporibus
+                doloribus numquam exercitationem expedita? Alias quo illo consequuntur nostrum nulla tenetur. Debitis,
+            </p>
+
+        </div>
+
+        <div class="art-actions d-flex justify-content-between text-center py-5">
+            <div class="heart d-flex align-items-center gap-2">
+                <i class="lar la-heart"></i>
+                <p class="m-0">96</p>
+            </div>
+            <div class="share d-flex align-items-center gap-2">
+                <i class="lar la-bookmark"></i>
+                <i class="las la-share"></i>
+            </div>
+        </div>
+
+        <div class="profile d-flex justify-content-around text-center w-100">
+
+            <div class="author d-flex align-items-center gap-2 my-5">
+                <img width="100rem" class="rounded-circle" src="https://lastfm.freetls.fastly.net/i/u/770x0/bc72dda224016c991e2e32a2f2cba0fc.jpg#bc72dda224016c991e2e32a2f2cba0fc" alt="">
+                <div class="author-info d-flex flex-column text-start">
+                    <p class="m-0">Author name</p>
+                    <p class="followers text-secondary">1629 followers</p>
+                </div>
+            </div>
+
+            <button class="follow m-0 align-self-center">Follow</button>
+
+        </div>
 
     </section>
 
+    <footer class="d-flex flex-column">
+        <div class="logos_socials d-sm-flex justify-content-between border-bottom p-5">
+            <div class="logo">
+                <h2>Logo image</h2>
+            </div>
+            <div class="socials d-sm-flex justify-content-around">
+                <p class="px-4">Social</p>
+                <p class="px-4">Social</p>
+                <p class="px-4">Social</p>
+                <p class="px-4">Social</p>
+    
+            </div>
+        </div>
+        <div class="info px p-5 d-sm-flex justify-content-between">
+            <div class="copy">
+                <p>Copyright de ns que</p>
+            </div>
+            <div class="politicas d-flex justify-content-around gap-3">
+                <p>Hola me llamo Políticas de privacidad</p>
+                <p>Bienestar y salud</p>
+            </div>
+        </div>
+    
+    </footer>
 
+
+
+    <script src=" https://kit.fontawesome.com/e93ba2c81b.js" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
 
 </body>
 
