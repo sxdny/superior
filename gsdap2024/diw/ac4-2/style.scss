@@ -1,27 +1,36 @@
-// para importar las variables y no tener todo aquí mezclado
-@import "./scss/_variables.scss";
-@import "node_modules/bootstrap/scss/bootstrap.scss";
+// @import "node_modules/bootstrap/scss/bootstrap.scss"; import de bootstrap
+@import "./scss/_variables.scss"; // import de mis variables
 
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap"); // Inter font import
 
 * {
     font-family: "Inter", sans-serif;
 }
 
+body {
+    width: 100%;
+    background-color: $white-color !important;
+    color: $black-color;
+}
+
 /*Estilos para navbar*/
 .navbar {
-    background-color: $navbar-bg;
+    background-color: $navbar-bg !important;
     backdrop-filter: $blur-bg-filter;
-    color: $navbar-color;
+    color: $white-color !important;
     background-blend-mode: overlay;
+
+    a {
+        color: white !important;
+    }
+
+    button {
+        background-color: white;
+    }
 
     /* para safari */
     -webkit-backdrop-filter: $blur-bg-filter;
     font-size: $navbar-font-size;
-}
-
-body {
-    width: 100%;
 }
 
 section {
@@ -38,6 +47,20 @@ section {
         text-align: center;
         margin: 3rem 2rem;
         width: $container-width;
+
+        header {
+
+            margin-bottom: 1rem;
+
+            p {
+                margin: 0
+            }
+        }
+
+        .art-description {
+            margin-top: 1rem;
+            width: 45vw;
+        }
 
         .display-2 {
             font-weight: bold !important;
@@ -68,6 +91,10 @@ section {
         }
     }
 
+    .profile {
+        width: 80vw;
+    }
+
     .art-content {
 
         width: 80vw;
@@ -86,9 +113,11 @@ section {
         h2,
         h3,
         h4,
-        h5 {
+        h5,
+        h6 {
             margin-top: 2rem;
-            font-weight: bold;
+            font-weight: bold !important;
+            color: $primary-color !important;
         }
 
 
@@ -97,9 +126,14 @@ section {
     .art-actions {
         width: 20vw;
         i {
-            font-size: 2rem;
+            font-size: 3rem;
             cursor: pointer;
         }
+    }
+
+    .author-name {
+        font-weight: bold;
+        font-size: 1.2rem;
     }
 
     .followers {
@@ -108,15 +142,49 @@ section {
 }
 
 .follow {
-        background-color: #222;
-        color: white;
-        border: 0;
-        padding: 1em 4em;
+    background-color: $primary-color;
+    color: white;
+    border: 0;
+    padding: 1em 4em;
+    border: 2px solid $primary-color;
+    
+    transition: .3s ease;
+}
+
+.follow:hover {
+    background-color: $highlight-color;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+}
+
+button {
+    border-radius: 5px !important;
 }
 
 footer {
-    background-color: #222;
+    background-color: $primary-color;
     color: darkgray;
+    border: 0;
+}
+
+.socials{
+    i {
+        font-size: 3rem;
+        cursor: pointer;
+    
+        transition: .3s ease;
+    } 
+    i:hover {
+        color: #CEFF1A
+    }
+}
+
+.info {
+    a, p {
+        text-decoration: none;
+        color: gray;
+        font-size: 13px;
+    }
 }
 
 
@@ -127,6 +195,10 @@ footer {
             width: 90% !important;
         }
     }
+
+    .art-description {
+            width: 75vw !important;
+        }
 }
 
 @media (max-width: 1000px) {
