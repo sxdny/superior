@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+}
+
+body {
+    /* Usar grid template columns */
+    display: grid;
+    grid-template-areas:
+        "nav nav nav"
+        "main main main"
+        "footer footer footer";
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+    height: 100vh;
+}
+
+body > header {
+    grid-area: nav;
+}
+
+header > nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#top_header > img {
+    width: 200px;
+}
+
+main > div {
+    grid-area: main;
+
+    display: grid;
+    grid-template-areas:
+        "aside div div"
+        "aside div div";
+    grid-template-columns: 15% 85%; 
+}
+
+main > aside {
+    grid-area: aside;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+
+    padding: 1rem 8rem 1rem 2rem;
+}
+
+.list-group > ul {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.list-group > ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+#products-listing {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+main > div {
+    grid-area: div;
+}
+
+footer {
+    grid-area: footer;
+}
