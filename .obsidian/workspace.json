@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Documentación Instalación Máquina Virtual.md",
+                "file": "gsdap2024/daw/Practica 8.md",
                 "mode": "source",
                 "source": false
               }
@@ -82,8 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "a325437f8fe2dbb0",
@@ -99,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Documentación Instalación Máquina Virtual.md",
+                "file": "gsdap2024/daw/Practica 8.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Documentación Instalación Máquina Virtual.md",
+                "file": "gsdap2024/daw/Practica 8.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Documentación Instalación Máquina Virtual.md"
+                "file": "gsdap2024/daw/Practica 8.md"
               }
             }
           },
@@ -173,6 +172,11 @@
   },
   "active": "374c91b4ea59b3c2",
   "lastOpenFiles": [
+    "images/Pasted image 20231115174655.png",
+    "images/Pasted image 20231115174618.png",
+    "images/Pasted image 20231115174541.png",
+    "Documentación Instalación Máquina Virtual.md",
+    "gsdap2024/daw/Practica 8.md",
     "images/Pasted image 20231019152406.png",
     "images/Pasted image 20231019152219.png",
     "images/Pasted image 20231019152144.png",
@@ -181,11 +185,7 @@
     "images/Pasted image 20231019151718.png",
     "images/Pasted image 20231019151629.png",
     "images/Pasted image 20231019151522.png",
-    "images/Pasted image 20231019151442.png",
-    "images/Pasted image 20231019151328.png",
-    "images/Pasted image 20231019151243.png",
     "gsdap2024/daw/notas_daw.md",
-    "Documentación Instalación Máquina Virtual.md",
     "gsdap2024/diw/repaso_examen_ud1-3.md",
     "gsdap2023/sin/silva_brazdeoliveira_sidney_UD1ACT1.md",
     "mates/Matemáticas simplificadas.pdf",
@@ -217,7 +217,6 @@
     "README.md",
     "gsdap2023/ed/notas_ed.md",
     "gsdap2024/pdaw/notas_proyecto.md",
-    "Importante.md",
-    "2023-09-22.md"
+    "Importante.md"
   ]
 }
