@@ -36,16 +36,23 @@ body > header {
 }
 
 header > nav {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+}
+
+#top_header {
+    width: 100%;
+}
+
+#bottom_header {
     text-align: center;
+    margin-top: 1rem;
+    width: 100%;
+    word-spacing: 50px;
 }
 
 #bottom_header > ul {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    padding-top: 1rem;
+    width: 100%;
+    text-align: center;
 }
 
 #bottom_header > ul > li > a {
@@ -59,7 +66,7 @@ header > nav {
 #back-to-top {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 50px;
     padding: 1rem;
 }
 
@@ -89,19 +96,12 @@ main {
     width: 100%;
 }
 
-main > div {
-    width: 100%;
-
-}
-
 main > aside {
     grid-area: aside;
 }
 
 .list-group {
-    display: flex;
-    flex-direction: column;
-    height: 10rem;
+    
 
     padding: 1rem 8rem 1rem 2rem;
 }
@@ -126,6 +126,7 @@ main > aside {
 
 aside {
     position: absolute;
+    width: 20rem;
 }
 
 section {
@@ -143,7 +144,7 @@ section {
 
 #product-listing > li > article {
     width: 18rem;
-    margin: 0rem 0rem 0rem 0rem;
+    margin: 0px 5px 5px 0px ;
     float: left;
 }
 
@@ -162,22 +163,13 @@ img {
 
 #products-filter {
     padding: 1rem;
+    width: 90.2%;
     background-color: lightgray;
     font-weight: 500;
     position: sticky;
     top: 0;
 }
 
-
-main > div > section {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 0rem;
-}
-
-section {
-    width: calc(100% - 20rem);
-}
 
 section > ul > li > article {
     width: 100%;
@@ -197,10 +189,8 @@ main > div {
 
 footer {
     margin-top: 230vh;
-    grid-area: footer;
     background-color: lightgray;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
     text-align: center;
 }
 
