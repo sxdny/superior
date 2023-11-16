@@ -2,18 +2,7 @@
     margin: 0;
     padding: 0;
     display: inline-block;
-    font-family:
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        "Open Sans",
-        "Helvetica Neue",
-        sans-serif;
+    font-family: system-ui;
 }
 
 body {
@@ -67,12 +56,12 @@ header > nav {
     position: fixed;
     bottom: 20px;
     right: 50px;
-    padding: 1rem;
+    width: fit-content;
+    padding: 2px 5px;
 }
 
 #bottom_header > ul > li > a:hover {
     color: gold;
-    text-decoration: dashed;
 }
 
 #bottom_header > div > input {
@@ -101,9 +90,17 @@ main > aside {
 }
 
 .list-group {
-    
-
     padding: 1rem 8rem 1rem 2rem;
+    width: 100%;
+}
+
+.list-group > ul {
+    display: block;
+}
+
+.list-group > ul > li {
+    display: block;
+    margin-top: 10px;
 }
 
 .list-group > ul > li > a {
@@ -117,8 +114,7 @@ main > aside {
 }
 
 .list-group > ul {
-    display: flex;
-    flex-direction: column;
+    display: block;
     gap: 0.5rem;
     padding-left: 1rem;
     padding-top: 1rem;
@@ -130,27 +126,26 @@ aside {
 }
 
 section {
-    position: absolute;
     margin-left: 20rem;
 }
 
 #product-listing {
-    width: 100%;
+    width: fit-content;
+    text-align: center;
 }
 
 #product-listing > li {
-    width: 100%;
+    width: fit-content;
 }
 
 #product-listing > li > article {
-    width: 18rem;
-    margin: 0px 5px 5px 0px ;
+    width: fit-content;
+    margin: 0px 5px 0px 0px;
     float: left;
 }
 
 .item-details {
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
 
 .product-name {
@@ -163,16 +158,11 @@ img {
 
 #products-filter {
     padding: 1rem;
-    width: 90.2%;
+    display: block;
     background-color: lightgray;
     font-weight: 500;
     position: sticky;
     top: 0;
-}
-
-
-section > ul > li > article {
-    width: 100%;
 }
 
 article > .image-container {
@@ -184,55 +174,77 @@ article > .item-details {
 }
 
 main > div {
-    grid-area: div;
+    width: fit-content;
 }
 
 footer {
-    margin-top: 230vh;
+    margin: auto;
+    text-align: center;
     background-color: lightgray;
     width: 100%;
-    text-align: center;
 }
 
-footer > ul {
-    display: flex;
-    flex-direction: column;
+footer > ul > li {
+    width: fit-content;
+    display: block;
 }
 
-@media (max-width: 620px) {
-    #product-listing > li {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #product-listing > li > article > div > a {
-        width: 100%;
-    }
+footer > div {
+    display: block;
 }
 
 @media (max-width: 920px) {
     main > div {
-        display: flex;
-        flex-direction: column;
+        display: inline-block;
     }
 
     main > div > aside {
+        display: inline-block;
+        width: 100%;
         text-align: center;
-        padding: 0;
+    }
+
+    article {
+        width: 100%;
+    }
+
+    main > div > section {
+        display: inline-block;
+        margin-top: 12rem;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .product-listing {
+        display: inline-block;
+        width: fit-content;
+        text-align: center;
+    }
+
+    #product-listing > li > article {
+        width: 100%;
+        margin: 0px 5px 0px 0px;
+        float: left;
+    }
+
+    .image-container > a {
+        width: 100%;
     }
 
     .list-group {
+        display: inline-block;
         padding: 0;
         padding-top: 1rem;
     }
 
     .list-group > ul {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        gap: 2rem;
-        flex-direction: row;
-        padding: 0;
-        padding-top: 1rem;
+        display: block;
+        text-align: center;
+    }
+
+    .list-group > ul > li {
+        display: inline-block;
+        margin: 5px;
     }
 
     section > div {
@@ -250,8 +262,10 @@ footer > ul {
     }
 
     #bottom_header > ul {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        gap: 1.5rem;
+        display: inline-block;
+    }
+
+    #bottom_hedaer > ul > li {
+        display: inline-block;
     }
 }
