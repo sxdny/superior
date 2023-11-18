@@ -4,7 +4,7 @@
   "darkStyle": "minimal-dark",
   "lightScheme": "minimal-default-light",
   "darkScheme": "minimal-flexoki-dark",
-  "editorFont": "",
+  "editorFont": "SF Pro Display",
   "lineHeight": 1.5,
   "lineWidth": 40,
   "lineWidthWide": 50,
