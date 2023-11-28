@@ -10,8 +10,12 @@ let username = document.getElementById("username");
 let email = document.getElementById("email");
 let password = document.getElementById("password")
 
+// botones
+let deleteUserButton;
+let editUserButton;
+
 // lista de usuarios
-let usersList = document.getElementById("users-ul");
+let usersList = document.getElementById("users-table");
 
 // creación de la base de datos
 let database = "users_db";
@@ -78,7 +82,7 @@ function openCreateDb(onDbCompleted) {
 sendData.addEventListener("click", addUser);
 
 // función para añadir un usuario a la base de datos
-function addUser(username, email, password) {
+function addUser() {
 
     // abrimos la base de datos
     openCreateDb(function () {
@@ -91,22 +95,24 @@ function addUser(username, email, password) {
 
         // creamos un objeto con los datos del usuario
         let user = {
-            username: username,
-            email: email,
-            password: password
+            username: username.value,
+            email: email.value,
+            password: password.value
         };
+
+        console.log("Usuario añadido:", user);
 
         // añadimos el usuario a la base de datos
         let request = objectStore.add(user);
 
         // si se ha añadido correctamente
         request.onsuccess = function (event) {
-            alert("Usuario añadido correctamente");
+            console.log("Usuario añadido correctamente");
 
-            // limpiamos los campos
-            clearFields();
             // mostramos los usuarios
             showUsers();
+            // limpiamos los campos
+            clearFields();
         }
 
         // si no se ha podido añadir
@@ -130,36 +136,25 @@ function showUsers() {
         // obtenemos el objeto de la transacción
         let objectStore = transaction.objectStore(DB_STORE_NAME);
 
-        // creamos una petición para obtener todos los usuarios
+        // obtener los usuarios
         let request = objectStore.getAll();
 
         // si se ha obtenido correctamente
         request.onsuccess = function (event) {
 
-            alert("Usuarios obtenidos correctamente");
+            console.log("Usuarios obtenidos correctamente");
 
             // obtenemos los usuarios
-            let users = event.target.result;
+            let users = request.result;
 
-            // creamos una variable para guardar el html
-            let html = "";
+            usersList.innerHTML += "<tr><th>Nombre de usuario</th><th>Email</th><th>Contraseña</th><th>Editar</th><th>Eliminar</th></tr>";
 
-            // recorremos los usuarios
-            for (let i = 0; i < users.length; i++) {
+            users.forEach(user => {
+                // tabla para mostrar los usuarios
+                usersList.innerHTML += "<tr><td>" + user.username + "</td><td>" + user.email + "</td><td>" + user.password + "</td><td><button class='btn btn-warning' onclick='editUser(" + user.id + ")'>Editar</button></td><td><button class='btn btn-danger' onclick='deleteUser(" + user.id + ")'>Eliminar</button></td></tr>";
+            });
 
-                // añadimos el html
-                html += "<ul>";
-                html += "<li>" + users[i].username + "</li>";
-                html += "<li>" + users[i].email + "</li>";
-                html += "<li>" + users[i].password + "</li>";
-                html += "<li><button class='btn btn-warning' onclick='editUser(" + users[i].id + ")'>Editar</button></li>";
-                html += "<li><button class='btn btn-danger' onclick='deleteUser(" + users[i].id + ")'>Eliminar</button></li>";
-                html += "</ul>";
-
-            }
-
-            // mostramos los usuarios
-            usersList.children.innerHTML = html;
+            console.log(usersList.children);
 
         }
 
@@ -177,4 +172,41 @@ function clearFields() {
     username.value = "";
     email.value = "";
     password.value = "";
+}
+
+
+// función para eliminar un usuario	
+function deleteUser(id) {
+
+    // abrimos la base de datos
+    openCreateDb(function () {
+
+        // creamos una transacción para leer los usuarios
+        let transaction = db.transaction(DB_STORE_NAME, "readwrite");
+
+        // obtenemos el objeto de la transacción
+        let objectStore = transaction.objectStore(DB_STORE_NAME);
+
+        // eliminamos el usuario
+        let request = objectStore.delete(id);
+
+        // si se ha eliminado correctamente
+        request.onsuccess = function (event) {
+            console.log("Usuario eliminado correctamente");
+
+            // mostramos los usuarios
+            showUsers();
+        }
+
+        // si no se ha podido eliminar
+        request.onerror = function (event) {
+            alert("Error al eliminar el usuario", event.target.errorCode);
+        }
+
+    });
+
+}
+
+window.onload = function () {
+    showUsers();
 }

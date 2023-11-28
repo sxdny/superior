@@ -59,3 +59,37 @@ body {
 .form button:hover {
     background-color: rgb(33, 33, 224);
 }
+
+#users-table {
+    margin: 1rem;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid gray;
+}
+
+#users-table tr td {
+    padding: 0.5rem;
+    border: 1px solid gray;
+}
+
+#users-table tr th {
+    padding: 0.5rem;
+    border: 1px solid gray;
+    background-color: darkblue;
+    color: white;
+}
+
+/* Cambiar los estilos después */
+
+#users-table tr td button {
+    padding: 0.5rem 1rem;
+    background-color: darkblue;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#users-table tr td button:hover {
+    background-color: rgb(33, 33, 224);
+}
