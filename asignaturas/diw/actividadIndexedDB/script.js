@@ -1,212 +1,283 @@
-// get indexedb from letious web browsers (Chrome, Mozilla, Safari, etc.)
-let indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
+// declaramos los datos de la base de datos
+var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 
-// elementos
-let buttonSendData = document.getElementById("sendData");
-let idOcult = document.getElementById("idOculta");
+// nombre de la base de datos
+var database = "dbUsers";
 
-// elementos del formulario
-let username = document.getElementById("username");
-let email = document.getElementById("email");
-let password = document.getElementById("password")
-
-// botones
-let deleteUserButton;
-let editUserButton;
-
-// lista de usuarios
-let usersList = document.getElementById("users-table");
-
-// creación de la base de datos
-let database = "users_db";
-
-// esto es como una tabla
+// esto es como un nombre de tabla
 const DB_STORE_NAME = 'users';
+
+// version de la base de datos
 const DB_VERSION = 1;
 
-// variable que contiene la instancia de la base de datos
-let db;
-let opened = false;
+// variable para almacenar la base de datos
+var db;
 
-// títulos de la página (etiquetas acciones de la base de datos)
-const EDIT_USER = "Editar usuarios";
-const SIGN_UP = "Registrar un nuevo usuario";
+// variable para saber si la base de datos esta abierta o no
+var opened = false;
+
+// acciones de la página
+const EDITAR_USUARIO = "Editar usuario";
+const NUEVO_USUARIO = "Nuevo usuario";
+const AGREGAR_USUARIO = "Agregar usuario";
+
+// elementos del formulario
+var h1Title = document.getElementById("h1Title");
+var form = document.getElementById("form");
+
+var hiddenId = document.getElementById("hiddenId");
+
+// tabla
+var usersTable = document.getElementById("usersTable");
+
+// botones
+var sendData = document.getElementById("sendData");
 
 /*
- * Función para abrir / crear la base de datos.
- * Dependiendo del estado de "opened", la abrirá o la cerrará
- * (si ya hay una abierta)
- */
-
-/*
-    onDbCompleted es una función pasada por parémetro
-    para cuando la función openCreateDb haya creado o
-    abierto la base de datos.
+* Esta función abrirá la base de datos y creará la tabla si no  
+* existe. Si la base de datos ya existe, la abrirá.
 */
 
 function openCreateDb(onDbCompleted) {
 
-    // si la base de datos ya está abierta, la cerramos
+    // si la base de datos esta abierta la cerramos
     if (opened) {
         db.close();
         opened = false;
     }
 
-    // abrimos la base de datos
-    let request = indexedDB.open(database, DB_VERSION);
-
-    // si la base de datos se abre correctamente
-    request.onsuccess = function (event) {
-        db = event.target.result;
+    // abrimos la base de datos y almacenamos el resultado en la variable req
+    var req = indexedDB.open(database, DB_VERSION);
+    
+    req.onsuccess = function (e) {
+        db = this.result; // Or event.target.result
+        console.log("openCreateDb: Databased opened " + db);
         opened = true;
-        onDbCompleted();
-    }
+    
+        onDbCompleted(db);
+    
+    };
+    
+    // esta función se ejecuta cuando se crea la base de datos.
+    req.onupgradeneeded = function () {
+    
+        db = req.result;
+    
+        console.log("openCreateDb: upgrade needed " + db);
+        var store = db.createObjectStore(DB_STORE_NAME, { keyPath: "id", autoIncrement: true });
+        console.log("openCreateDb: Object store created");
+    
+        // creamos los indices (columnas) de la tabla
+        store.createIndex('fname', 'fname', { unique: false });
+        console.log("openCreateDb: Index created on fname");
+        store.createIndex('lname', 'lname', { unique: false });
+        console.log("openCreateDb: Index created on lname");
+        store.createIndex('dni', 'dni', { unique: false });
+        console.log("openCreateDb: Index created on dni");
+    };
+    
+    req.onerror = function (e) {
+        console.error("openCreateDb: error opening or creating DB:", e.target.errorCode);
+    };
 
-    // si la base de datos no se ha podido abrir
-    request.onerror = function (event) {
-        alert("Error al abrir la base de datos:", event.target.errorCode);
-    }
+}
 
-    // si la base de datos no existe, la creamos
-    request.onupgradeneeded = function (event) {
-        db = event.target.result;
-        let objectStore = db.createObjectStore(DB_STORE_NAME, { keyPath: "id", autoIncrement: true });
-        objectStore.createIndex("username", "username", { unique: true });
-        objectStore.createIndex("email", "email", { unique: true });
-        objectStore.createIndex("password", "password", { unique: false });
-    }
-
-};
-
-// función para añadir un usuario
-sendData.addEventListener("click", addUser);
+// añadir addEventListener al botón sendData
+sendData.addEventListener("click", function () {
+    addUser(db);
+});
 
 // función para añadir un usuario a la base de datos
-function addUser() {
+function addUser(db) {
 
-    // abrimos la base de datos
-    openCreateDb(function () {
+    // obtenemos los datos del formulario
+    var username = document.getElementById("username");
+    var email = document.getElementById("email");
+    var password = document.getElementById("password");
 
-        // creamos una transacción para añadir un usuario
-        let transaction = db.transaction(DB_STORE_NAME, "readwrite");
+    // creamos un objeto usuario con los datos del formulario
+    var user = {
+        username: username.value,
+        email: email.value,
+        password: password.value
+    };
 
-        // obtenemos el objeto de la transacción
-        let objectStore = transaction.objectStore(DB_STORE_NAME);
+    // abrimos la transacción
+    var transaction = db.transaction(DB_STORE_NAME, "readwrite");
+    var objectStore = transaction.objectStore(DB_STORE_NAME);
 
-        // creamos un objeto con los datos del usuario
-        let user = {
-            username: username.value,
-            email: email.value,
-            password: password.value
-        };
+    // añadimos el usuario a la base de datos
+    console.log("addUser: Adding user: " + user);
+    var request = objectStore.add(user);
 
-        console.log("Usuario añadido:", user);
+    // si la petición se ha realizado correctamente
+    request.onsuccess = () => {
+        console.log("Usuario añadido correctamente");
+    };
 
-        // añadimos el usuario a la base de datos
-        let request = objectStore.add(user);
-
-        // si se ha añadido correctamente
-        request.onsuccess = function (event) {
-            console.log("Usuario añadido correctamente");
-
-            // mostramos los usuarios
-            showUsers();
-            // limpiamos los campos
-            clearFields();
-        }
-
-        // si no se ha podido añadir
-        request.onerror = function (event) {
-            alert("Error al añadir el usuario", event.target.errorCode);
-        }
-
-    });
+    // si la petición ha fallado
+    request.onerror = function (e) {
+        console.log("Error al añadir el usuario:", e.target.errorCode);
+    };
 
 }
 
-// función para mostrar los usuarios	
-function showUsers() {
-
-    // abrimos la base de datos
-    openCreateDb(function () {
-
-        // creamos una transacción para leer los usuarios
-        let transaction = db.transaction(DB_STORE_NAME, "readonly");
-
-        // obtenemos el objeto de la transacción
-        let objectStore = transaction.objectStore(DB_STORE_NAME);
-
-        // obtener los usuarios
-        let request = objectStore.getAll();
-
-        // si se ha obtenido correctamente
-        request.onsuccess = function (event) {
-
-            console.log("Usuarios obtenidos correctamente");
-
-            // obtenemos los usuarios
-            let users = request.result;
-
-            usersList.innerHTML += "<tr><th>Nombre de usuario</th><th>Email</th><th>Contraseña</th><th>Editar</th><th>Eliminar</th></tr>";
-
-            users.forEach(user => {
-                // tabla para mostrar los usuarios
-                usersList.innerHTML += "<tr><td>" + user.username + "</td><td>" + user.email + "</td><td>" + user.password + "</td><td><button class='btn btn-warning' onclick='editUser(" + user.id + ")'>Editar</button></td><td><button class='btn btn-danger' onclick='deleteUser(" + user.id + ")'>Eliminar</button></td></tr>";
-            });
-
-            console.log(usersList.children);
-
-        }
-
-        // si no se ha podido obtener
-        request.onerror = function (event) {
-            alert("Error al obtener los usuarios", event.target.errorCode);
-        }
-
-    });
-
-}
-
-// función para eliminar los campos de los formularios
-function clearFields() {
-    username.value = "";
-    email.value = "";
-    password.value = "";
-}
-
-
-// función para eliminar un usuario	
+// función para eliminar un usuario
 function deleteUser(id) {
 
-    // abrimos la base de datos
-    openCreateDb(function () {
+    // abrimos la transacción
+    var transaction = db.transaction(DB_STORE_NAME, "readwrite");
+    var objectStore = transaction.objectStore(DB_STORE_NAME);
 
-        // creamos una transacción para leer los usuarios
-        let transaction = db.transaction(DB_STORE_NAME, "readwrite");
+    // eliminamos el usuario de la base de datos
+    var request = objectStore.delete(id);
 
-        // obtenemos el objeto de la transacción
-        let objectStore = transaction.objectStore(DB_STORE_NAME);
+    // si la petición se ha realizado correctamente
+    request.onsuccess = () => {
+        console.log("Usuario eliminado correctamente");
+    };
 
-        // eliminamos el usuario
-        let request = objectStore.delete(id);
+    // si la petición ha fallado
+    request.onerror = function (e) {
+        console.log("Error al eliminar el usuario:", e.target.errorCode);
+    };
 
-        // si se ha eliminado correctamente
-        request.onsuccess = function (event) {
-            console.log("Usuario eliminado correctamente");
-
-            // mostramos los usuarios
-            showUsers();
-        }
-
-        // si no se ha podido eliminar
-        request.onerror = function (event) {
-            alert("Error al eliminar el usuario", event.target.errorCode);
-        }
-
-    });
+    // recargamos la página
+    location.reload();
 
 }
 
-window.onload = function () {
-    showUsers();
+// función para editar un usuario
+// esta función obtiene el usuario de la base de datos y lo añade en el formulario para después editarlo
+function editUser(id) {
+
+    // cambiamos el título del formulario
+    h1Title.innerHTML = EDITAR_USUARIO;
+
+    // cambiamos el texto del botón
+    sendData.innerHTML = EDITAR_USUARIO;
+
+    // abrimos la transacción
+    var transaction = db.transaction(DB_STORE_NAME, "readwrite");
+    var objectStore = transaction.objectStore(DB_STORE_NAME);
+
+    // obtenemos el usuario de la base de datos
+    var request = objectStore.get(id);
+
+    // si la petición se ha realizado correctamente
+    request.onsuccess = function (e) {
+
+        // obtenemos el usuario
+        var user = e.target.result;
+
+        // añadimos los datos del usuario en el formulario
+        hiddenId.value = user.id;
+        username.value = user.username;
+        email.value = user.email;
+        password.value = user.password;
+
+        // cambiamos el addEventListener del botón sendData
+        sendData.removeEventListener("click", addUser);
+        sendData.addEventListener("click", function () {
+            updateUser(db);
+        });
+
+    };
+
+    // si la petición ha fallado
+    request.onerror = function (e) {
+        console.log("Error al obtener el usuario:", e.target.errorCode);
+    };
+
+}
+
+// función para actualizar un usuario	
+function updateUser(db) {
+
+    // obtenemos los datos del formulario
+    var id = document.getElementById("hiddenId");
+    var username = document.getElementById("username");
+    var email = document.getElementById("email");
+    var password = document.getElementById("password");
+
+    // creamos un objeto usuario con los datos del formulario
+    var user = {
+        id: id.value,
+        username: username.value,
+        email: email.value,
+        password: password.value
+    };
+
+    // abrimos la transacción
+    var transaction = db.transaction(DB_STORE_NAME, "readwrite");
+    var objectStore = transaction.objectStore(DB_STORE_NAME);
+
+    // actualizamos el usuario de la base de datos
+    var request = objectStore.put(user);
+
+    // si la petición se ha realizado correctamente
+    request.onsuccess = () => {
+        console.log("Usuario actualizado correctamente");
+    };
+
+    // si la petición ha fallado
+    request.onerror = function (e) {
+        console.log("Error al actualizar el usuario:", e.target.errorCode);
+    };
+
+    // recargamos la página
+    location.reload();
+
+}
+
+// función para mostrar los usuarios en la tabla de la página
+function readData() {
+    openCreateDb(function (db) {
+        readUsers(db);
+    });
+}
+
+// función para leer los usuarios de la base de datos
+function readUsers(db) {
+
+    // abrimos la transacción
+    var transaction = db.transaction([DB_STORE_NAME], "readonly");
+
+    // obtenemos el objeto store
+    var objectStore = transaction.objectStore(DB_STORE_NAME);
+
+    // abrimos el cursor
+    var request = objectStore.openCursor();
+
+    // si la petición se ha realizado correctamente
+    request.onsuccess = function (e) {
+
+        // obtenemos el cursor
+        var cursor = e.target.result;
+
+        // si el cursor no es nulo
+        if (cursor) {
+
+            // añadimos los usuarios en la tabla junto con los botones
+            usersTable.innerHTML += "<tr><td>" + cursor.value.username + "</td><td>" + cursor.value.email + "</td><td>" + cursor.value.password + "</td><td><button onclick='editUser(" + cursor.value.id + ")'>Editar</button></td><td><button onclick='deleteUser(" + cursor.value.id + ")'>Eliminar</button></td></tr>";
+            
+
+            // obtenemos el siguiente usuario
+            cursor.continue();
+
+        } else {
+            console.log("No hay más usuarios");
+        }
+
+    };
+
+    // si la petición ha fallado
+    request.onerror = function (e) {
+        console.log("Error al leer los usuarios:", e.target.errorCode);
+    };
+
+}
+
+window.onload = () => {
+    readData();
 }
