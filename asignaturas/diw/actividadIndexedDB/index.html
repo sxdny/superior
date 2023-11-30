@@ -36,9 +36,22 @@
             </div>
         </form>
     
-        <div id="users-container" class="container users-container">
+        <div id="usersContainer" class="d-none container users-container">
             <h2>Lista de usuarios:</h2>
-            <table id="usersTable"></table>
+            <table class="" id="usersTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                </tbody>
+            </table>
         </div>
     </main>
 

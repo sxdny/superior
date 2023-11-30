@@ -60,19 +60,19 @@ body {
     background-color: rgb(33, 33, 224);
 }
 
-#users-table {
+#usersTable {
     margin: 1rem;
     border-collapse: collapse;
     width: 100%;
     border: 1px solid gray;
 }
 
-#users-table tr td {
+#usersTable tr td {
     padding: 0.5rem;
     border: 1px solid gray;
 }
 
-#users-table tr th {
+#usersTable tr th {
     padding: 0.5rem;
     border: 1px solid gray;
     background-color: darkblue;
@@ -81,7 +81,7 @@ body {
 
 /* Cambiar los estilos después */
 
-#users-table tr td button {
+#usersTable tr td button {
     padding: 0.5rem 1rem;
     background-color: darkblue;
     color: white;
@@ -90,6 +90,10 @@ body {
     cursor: pointer;
 }
 
-#users-table tr td button:hover {
+#usersTable tr td button:hover {
     background-color: rgb(33, 33, 224);
+}
+
+.d-none {
+    display: none;
 }

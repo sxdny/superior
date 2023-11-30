@@ -5,10 +5,10 @@ var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedD
 var database = "dbUsers";
 
 // esto es como un nombre de tabla
-const DB_STORE_NAME = 'users';
+const DB_STORE_NAME = 'users4';
 
 // version de la base de datos
-const DB_VERSION = 1;
+const DB_VERSION = 6;
 
 // variable para almacenar la base de datos
 var db;
@@ -32,6 +32,8 @@ var usersTable = document.getElementById("usersTable");
 
 // botones
 var sendData = document.getElementById("sendData");
+
+let usersContainer = document.getElementById("usersContainer");
 
 /*
 * Esta función abrirá la base de datos y creará la tabla si no  
@@ -130,6 +132,9 @@ function deleteUser(id) {
     var objectStore = transaction.objectStore(DB_STORE_NAME);
 
     // eliminamos el usuario de la base de datos
+
+    console.log("deleteUser: Deleting user: " + id);
+
     var request = objectStore.delete(id);
 
     // si la petición se ha realizado correctamente
@@ -147,8 +152,9 @@ function deleteUser(id) {
 
 }
 
-// función para editar un usuario
-// esta función obtiene el usuario de la base de datos y lo añade en el formulario para después editarlo
+
+//función para editar un usuario
+//esta función obtiene el usuario de la base de datos y lo añade en el formulario para después editarlo
 function editUser(id) {
 
     // cambiamos el título del formulario
@@ -191,6 +197,7 @@ function editUser(id) {
 
 }
 
+
 // función para actualizar un usuario	
 function updateUser(db) {
 
@@ -199,6 +206,9 @@ function updateUser(db) {
     var username = document.getElementById("username");
     var email = document.getElementById("email");
     var password = document.getElementById("password");
+
+    // eliminamos el usuario de la base de datos
+    deleteUser(id);
 
     // creamos un objeto usuario con los datos del formulario
     var user = {
@@ -213,7 +223,7 @@ function updateUser(db) {
     var objectStore = transaction.objectStore(DB_STORE_NAME);
 
     // actualizamos el usuario de la base de datos
-    var request = objectStore.put(user);
+    var request = objectStore.put(user, user.id);
 
     // si la petición se ha realizado correctamente
     request.onsuccess = () => {
@@ -241,7 +251,7 @@ function readData() {
 function readUsers(db) {
 
     // abrimos la transacción
-    var transaction = db.transaction([DB_STORE_NAME], "readonly");
+    var transaction = db.transaction(DB_STORE_NAME, "readonly");
 
     // obtenemos el objeto store
     var objectStore = transaction.objectStore(DB_STORE_NAME);
@@ -258,8 +268,13 @@ function readUsers(db) {
         // si el cursor no es nulo
         if (cursor) {
 
+            console.log("Hay usuarios");
+            usersContainer.classList.remove("d-none");
+
+
             // añadimos los usuarios en la tabla junto con los botones
-            usersTable.innerHTML += "<tr><td>" + cursor.value.username + "</td><td>" + cursor.value.email + "</td><td>" + cursor.value.password + "</td><td><button onclick='editUser(" + cursor.value.id + ")'>Editar</button></td><td><button onclick='deleteUser(" + cursor.value.id + ")'>Eliminar</button></td></tr>";
+            let usersTableBody = document.getElementById("usersTableBody");
+            usersTableBody.innerHTML += "<tr> <td>"+ cursor.value.id +"</td> <td>" + cursor.value.username + "</td><td>" + cursor.value.email + "</td><td>" + cursor.value.password + "</td><td><button onclick='editUser(" + cursor.value.id + ")'>Editar</button></td><td><button onclick='deleteUser(" + cursor.value.id + ")'>Eliminar</button></td></tr>";
             
 
             // obtenemos el siguiente usuario
