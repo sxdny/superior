@@ -19,6 +19,7 @@ const ADD_USER_BUTTON = document.getElementById('sendData');
 ADD_USER_BUTTON.addEventListener('click', sendData);
 
 const EDIT_USER_BUTTON = document.getElementById('updateData');
+EDIT_USER_BUTTON.addEventListener('click', editUser);
 
 // elementos de la base de datos
 
@@ -88,7 +89,7 @@ function sendData() {
         else {
             editUser(db);
         }
-    } )
+    })
 }
 
 // función para leer la información de la base de datos
@@ -180,17 +181,124 @@ function addUsersToHTML(users) {
     users.forEach(user => {
         // creamos el elemento
         let li = document.createElement('li');
+        let buttonEdit = document.createElement('button');
+        let buttonDelete = document.createElement('button');
 
-        let button = document.createElement('button');
+        // añadimos los eventos
+        buttonEdit.addEventListener('click', () => {
+            editUserEvent(user.id);
+        });
 
+        buttonDelete.addEventListener('click', () => {
+            deleteUser(user.id);
+        });
+        
         // añadimos el texto
-        li.innerText = `Nombre: ${user.username}, Contraseña: ${user.password}, Email: ${user.email} ${echoButton}`;
+        li.innerText = `Nombre: ${user.username}, Contraseña: ${user.password}, Email: ${user.email}`;
+        buttonEdit.innerText = 'Editar';
+        buttonDelete.innerText = 'Borrar';
+
+        // añadimos el elemento a la lista
+        listaUsuarios.appendChild(li);
+        listaUsuarios.appendChild(buttonEdit);
+        listaUsuarios.appendChild(buttonDelete);
 
         // añadimos el elemento a la lista
         listaUsuarios.appendChild(li);
         console.log(listaUsuarios);
     });
 }
+
+// función para editar un usuario
+function editUserEvent(id) {
+    // abrimos la base de datos
+    openCreateDb((db) => {
+        // creamos la transacción
+        let transaction = db.transaction([DB_STORE_NAME], 'readwrite');
+        let objectStore = transaction.objectStore(DB_STORE_NAME);
+
+        let req = objectStore.get(id);
+
+        req.onsuccess = () => {
+            let user = req.result;
+
+            console.table(user);
+
+            // añadimos los datos al formulario
+            hiddenId.value = user.id;
+            username.value = user.username;
+            password.value = user.password;
+            email.value = user.email;
+
+            // cambiamos el título
+            TITULO.innerText = EDIT_USER;
+
+            // cambiamos el botón
+            ADD_USER_BUTTON.style.display = 'none';
+            EDIT_USER_BUTTON.style.display = 'block';
+
+        };
+
+        req.onerror = () => {
+            console.error("editUser: error reading data", this.error);
+        };
+    });
+}
+
+// función para editar un usuario
+function editUser() {
+    // creamos el objeto con los datos del formulario
+    let user = {
+        id: parseInt(hiddenId.value),
+        username: username.value,
+        password: password.value,
+        email: email.value
+    }
+
+    console.table(user);
+
+    // creamos la transacción
+    let transaction = db.transaction(DB_STORE_NAME, 'readwrite');
+    let objectStore = transaction.objectStore(DB_STORE_NAME);
+
+    let req = objectStore.put(user);
+
+    req.onsuccess = () => {
+        console.log("editUser: Data insertion successfully done. Id: " + req.result);
+
+        // // Operations we want to do after inserting data
+        // readData();
+        // clearFormInputs();
+    };
+
+    req.onerror = () => {
+        console.error("editUser: error creating data", this.error);
+    };
+}
+
+// función para borrar un usuario
+function deleteUser(id) {
+    // abrimos la base de datos
+    openCreateDb((db) => {
+        // creamos la transacción
+        let transaction = db.transaction([DB_STORE_NAME], 'readwrite');
+        let objectStore = transaction.objectStore(DB_STORE_NAME);
+
+        let req = objectStore.delete(id);
+
+        req.onsuccess = () => {
+            console.log("deleteUser: Data deleted successfully done. Id: " + id);
+
+            // Operations we want to do after inserting data
+            readData();
+        };
+
+        req.onerror = () => {
+            console.error("deleteUser: error deleting data", this.error);
+        };
+    });
+}
+
 
 
 window.onload = () => {
