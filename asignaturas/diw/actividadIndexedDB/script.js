@@ -119,8 +119,6 @@ function readUsers(db) {
             console.log("readUsers: no more entries");
             console.log("Usuarios de la base de datos: ");
             console.table(users);
-
-            addUsersToHTML(users);
         }
     };
 
@@ -165,6 +163,7 @@ function addUser(db) {
         // Operations we want to do after inserting data
         readData();
         clearFormInputs();
+        window.location.href = "../ac4-2/index.html";
     };
 
     req.onerror = () => {
@@ -172,42 +171,6 @@ function addUser(db) {
     };
 }
 
-// función para añadir los usuarios al HTML
-function addUsersToHTML(users) {
-    // vaciamos la lista
-    listaUsuarios.innerHTML = '';
-
-    // recorremos los usuarios
-    users.forEach(user => {
-        // creamos el elemento
-        let li = document.createElement('li');
-        let buttonEdit = document.createElement('button');
-        let buttonDelete = document.createElement('button');
-
-        // añadimos los eventos
-        buttonEdit.addEventListener('click', () => {
-            editUserEvent(user.id);
-        });
-
-        buttonDelete.addEventListener('click', () => {
-            deleteUser(user.id);
-        });
-        
-        // añadimos el texto
-        li.innerText = `Nombre: ${user.username}, Contraseña: ${user.password}, Email: ${user.email}`;
-        buttonEdit.innerText = 'Editar';
-        buttonDelete.innerText = 'Borrar';
-
-        // añadimos el elemento a la lista
-        listaUsuarios.appendChild(li);
-        listaUsuarios.appendChild(buttonEdit);
-        listaUsuarios.appendChild(buttonDelete);
-
-        // añadimos el elemento a la lista
-        listaUsuarios.appendChild(li);
-        console.log(listaUsuarios);
-    });
-}
 
 // función para editar un usuario
 function editUserEvent(id) {
