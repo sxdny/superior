@@ -22,10 +22,7 @@ ctx.strokeRect(0, 0, c.width, c.height);
 let x = 180;
 let y = c.height - 130;
 
-// grafico de barras con datos de un array de objetos verticales de abajo a arriba
 for (let i = 0; i < sales.length; i++) {
-    // hacer que cada barra tenga un color con un gradiente de color diferente
-    // gradient de derecha a izquierda
     let grd = ctx.createLinearGradient(x, 0, x + 70, 0);
     if (i == 0) {
         grd.addColorStop(0, "red");
@@ -59,17 +56,16 @@ for (let i = 0; i < sales.length; i++) {
 }
 
 // línea debajo de las barras
-// línea debajo de las barras
 ctx.beginPath();
-ctx.moveTo(100, c.height - 70); // comienza en el borde izquierdo, 100px por encima del borde inferior
-ctx.lineTo(c.width, c.height - 70); // termina en el borde derecho, 100px por encima del borde inferior
+ctx.moveTo(100, c.height - 70);
+ctx.lineTo(c.width, c.height - 70);
 ctx.strokeStyle = "black";
 ctx.lineWidth = 1;
 ctx.stroke();
 
 ctx.beginPath();
-ctx.moveTo(100, 0); // comienza en el borde izquierdo, 100px por encima del borde inferior
-ctx.lineTo(100, c.height - 70); // termina en el borde derecho, 100px por encima del borde inferior
+ctx.moveTo(100, 0);
+ctx.lineTo(100, c.height - 70);
 ctx.strokeStyle = "black";
 ctx.lineWidth = 1;
 ctx.stroke();
