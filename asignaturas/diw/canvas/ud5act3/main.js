@@ -40,9 +40,9 @@ function draw() {
 }
 
 parar.addEventListener("click", function () {
+    canvas.style.backgroundColor = "lightblue";
     // parar el juego
     velocidad = 0;
-    console.log(velocidad);
     clearInterval(intervalId);
 
     // cambiar el texto del botón
@@ -57,6 +57,7 @@ parar.addEventListener("click", function () {
 
 // botón para reanudar el juego
 reanudar.addEventListener("click", function () {
+    canvas.style.backgroundColor = "#222";
     intervalId = setInterval(draw, velocidad);
 
     // cambiar el texto del botón
@@ -71,18 +72,36 @@ reanudar.addEventListener("click", function () {
 
 reanudar.style.display = "none";
 
-// botón para aumentar la velocidad
-let aumentar = document.getElementById("velocidad");
-let velocidad = 10;
-aumentar.addEventListener("click", function () {
-    velocidad -= 0.5;
-    intervalId = setInterval(draw, velocidad);
-    console.log(velocidad);
+let speedXInput = document.getElementById("speedX");
+let speedYInput = document.getElementById("speedY");
+
+speedXInput.addEventListener("input", function () {
+    // para evitar que el juego se rompa
+    if (speedXInput.value === "") {
+        speedXInput.value = 0;
+    }
+    if (speedXInput.value > 10) {
+        speedXInput.value = 10;
+    }
+    dx = parseFloat(speedXInput.value);
 });
 
-let intervalId
+speedYInput.addEventListener("input", function () {
+    // para evitar que el juego se rompa
+    if (speedYInput.value === "") {
+        speedYInput.value = 0;
+    }
+    if (speedYInput.value > 10) {
+        speedYInput.value = 10;
+    }
+    dy = parseFloat(speedYInput.value);
+});
 
-window.onload = () => {
+let intervalId;
+let velocidad = 10;
+
+window.onload = (velocidad) => {
     intervalId = setInterval(draw, velocidad);
 }
+
 

@@ -1,5 +1,5 @@
 canvas {
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 body {
@@ -8,7 +8,6 @@ body {
     height: 100vh;
     background-color: #222;
 }
-
 
 #parar {
     background-color: #f00;
@@ -53,4 +52,34 @@ body {
 
 #velocidad:hover {
     background-color: #ff0;
+}
+
+#speedX {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#speedX:hover {
+    background-color: #444;
+}
+
+#speedY {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#speedY:hover {
+    background-color: #444;
 }
