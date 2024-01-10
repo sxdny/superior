@@ -12,23 +12,20 @@
 
     <main id="app">
         <form class="container form-container">
-            <h1 id="h1Title">Join Now</h1>
+            <h1 id="h1Title">Sign Up</h1>
             <div class="icon">
                 <i class="fa-solid fa-circle-user fa-1x icon-backgroung"></i>
             </div>
             <div class="form" id="form">
                 <input hidden id="hiddenId" type="text" name="hiddenId" value="0">
                 <p>
-                    <label for="username">Username:</label>
-                    <input id="username" type="text" name="username" class="no-outline" />
+                    <input required id="username" type="text" name="username" class="no-outline" placeholder="Usuario" />
                 </p>
                 <p>
-                    <label for="email">Email:</label>
-                    <input id="email" type="text" name="email" class="no-outline" />
+                    <input required id="email" type="text" name="email" class="no-outline" placeholder="Correo electrónico" />
                 </p>
                 <p>
-                    <label for="password">Password:</label>
-                    <input id="password" type="password" name="password" class="no-outline" />
+                    <input required id="password" type="password" name="password" class="no-outline" placeholder="Contraseña" />
                 </p>
                 <p class="p-button">
                     <button id="sendData">Add user</button>
@@ -37,12 +34,7 @@
             </div>
         </form>
     
-        <div id="usersContainer" class="container users-container">
-            <h2>Lista de usuarios:</h2>
-            <ul id="listaUsuarios">
-
-            </ul>
-        </div>
+        
     </main>
 
     <script src="script.js"></script>
