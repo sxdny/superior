@@ -67,9 +67,12 @@ $("document").ready(() => {
   // unimos los dos arrays
   cards = cards.concat(copyCards);
 
-  $("body").append("<h2>Memory game - Sidney Silva</h2>");
-  $("body").append("<button id='start'>Start</button>");
-  $("body").append("<button id='reset'>Reset</button>");
+  $("body").append("<h2>Comic Characters Memory game</h2>");
+  $("body").append("<p>by Sidney Silva</p>");
+  $("body").append(
+    "<div id='buttons'><button id='start'>Start Game</button><button id='reset'>Reset</button></div>"
+  );
+
   $("body").append("<div id='game'></div>");
 
   cards.forEach((card) => {
@@ -79,14 +82,21 @@ $("document").ready(() => {
   });
 
   // hacer que cuando haga click en la carta se muestre la imagen
-  $(".back").on("click", function () {
+  $(".back").on("click", comprobarCartas);
+
+  // función para comprobar las cartas
+  function comprobarCartas() {
+    // añadimos la clase rotate
+    $(this).addClass("rotate");
+
     // cambiamos el estado de la carta a true
     $(this).parent().attr("fliped", "true");
 
-    // ponemos un display none a la carta
-    $(this).css("display", "none");
-    // le quitamos el display none a la carta de delante
-    $(this).next().css("display", "block");
+    setTimeout(() => {
+      $(this).css("display", "none");
+      $(this).next().css("display", "block");
+      $(this).removeClass("rotate");
+    }, 460);
 
     // guardamos las cartas con fliped true en la variable
     selectedCards = $(`div[fliped="true"]`).map(function () {
@@ -98,66 +108,86 @@ $("document").ready(() => {
 
     // si la variable tiene dos cartas
     if (selectedCards.length === 2) {
-      // comprobamos si las cartas son iguales
-      if (selectedCards[0] == selectedCards[1]) {
-        // si son iguales las dejamos boca arriba
+      // deshabilitamos temporamente el evento click
+      $(".back").off("click");
 
-        // obtenemos el data-card-name de la carta seleccionada
-        let cardName = $(this).parent().attr("data-card-name");
+      // hacemos que se comprueben las cartas después de 1 segundo
+      setTimeout(() => {
+        // comprobamos si las cartas son iguales
+        if (selectedCards[0] == selectedCards[1]) {
+          // si son iguales las dejamos boca arriba
 
-        // seleccionamos las cartas con el mismo data-card-name
-        $(`div[data-card-name="${cardName}"][fliped="true"]`).css(
-          "display",
-          "block"
-        );
+          // obtenemos el data-card-name de la carta seleccionada
+          let cardName = $(this).parent().attr("data-card-name");
 
-        // cambiamos el estado guessed a true
-        $(`div[data-card-name="${cardName}"][fliped="true"]`).attr(
-          "guessed",
-          "true"
-        );
+          // seleccionamos las cartas con el mismo data-card-name
+          $(`div[data-card-name="${cardName}"][fliped="true"]`).css(
+            "display",
+            "block"
+          );
 
-        // cambiamos el estado fliped a false
-        $(`div[data-card-name="${cardName}"][fliped="true"]`).attr(
-          "fliped",
-          "false"
-        );
+          // cambiamos el estado guessed a true
+          $(`div[data-card-name="${cardName}"][fliped="true"]`).attr(
+            "guessed",
+            "true"
+          );
 
-        // borramos las cartas de la variable
-        selectedCards = [];
-      } else {
-        // si no son iguales las volvemos a poner boca abajo
+          // cambiamos el estado fliped a false
+          $(`div[data-card-name="${cardName}"][fliped="true"]`).attr(
+            "fliped",
+            "false"
+          );
 
-        // obtenemos el data-card-name de las dos cartas seleccionadas
-        let cardName1 = selectedCards[0];
-        let cardName2 = selectedCards[1];
+          // borramos las cartas de la variable
+          selectedCards = [];
 
-        // seleccionamos las cartas con el mismo data-card-name
-        let card1 = $(`div[data-card-name="${cardName1}"][fliped="true"]`);
-        let card2 = $(`div[data-card-name="${cardName2}"][fliped="true"]`);
+          // revertimos la animación
+          $(this).removeClass("rotate");
+        } else {
+          // si no son iguales las volvemos a poner boca abajo
 
-        console.log(card1);
-        console.log(card2);
+          // obtenemos el data-card-name de las dos cartas seleccionadas
+          let cardName1 = selectedCards[0];
+          let cardName2 = selectedCards[1];
 
-        let children1 = $(card1).children();
+          // seleccionamos las cartas con el mismo data-card-name
+          let card1 = $(`div[data-card-name="${cardName1}"][fliped="true"]`);
+          let card2 = $(`div[data-card-name="${cardName2}"][fliped="true"]`);
 
-        let children2 = $(card2).children();
+          console.log(card1);
+          console.log(card2);
 
-        children1[0].style.display = "block";
-        children1[1].style.display = "none";
+          let children1 = $(card1).children();
+          let children2 = $(card2).children();
 
-        children2[0].style.display = "block";
-        children2[1].style.display = "none";
+          children1.addClass("rotate2");
+          children2.addClass("rotate2");
 
-        // cambiamos el estado fliped a false
-        card1.attr("fliped", "false");
-        card2.attr("fliped", "false");
+          setTimeout(() => {
+            children1[0].style.display = "block";
+            children1[1].style.display = "none";
 
-        // borramos las cartas de la variable
-        selectedCards = [];
-      }
+            children2[0].style.display = "block";
+            children2[1].style.display = "none";
+
+            children1.removeClass("rotate2");
+            children2.removeClass("rotate2");
+          }, 200);
+
+          // cambiamos el estado fliped a false
+          card1.attr("fliped", "false");
+          card2.attr("fliped", "false");
+
+          // borramos las cartas de la variable
+          selectedCards = [];
+        }
+      }, 1000);
+
+      // habilitamos el evento click
+      $(".back").on("click", comprobarCartas);
     }
-  });
+
+  }
 });
 
 console.log("Hola Mundo!");

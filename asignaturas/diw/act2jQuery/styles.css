@@ -1,7 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: rgb(245, 251, 253);
+    font-family: 'Inter', sans-serif;
+    padding: 5rem;
+    font-size: 1.5rem;
+    margin: 0;
+    display: grid;
+    place-content: center;
+    font-smooth: always;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0.5rem;
+    font-weight: 900;
+}
+
+p {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    color: #555;
+    font-size: 14px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+button#start {
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 7px;
+    background: #181818;
+    width: 10rem;
+    cursor: pointer;
+    transition: all 1.5 ease-in;
+    -webkit-transition: all 1.5 ease-in;
+    -moz-transition: all 1.5 ease-in;
+    -ms-transition: all 1.5 ease-in;
+    -o-transition: all 1.5 ease-in;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+
+button#start:hover {
+    background: #333;
+    border: 1px solid #181818;
+}
+
+button#reset {
+    padding: 0.5rem 1rem;
+    border: 1px solid #b6b5b5;
+    color: #181818;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 7px;
+    background: white;
+    width: 10rem;
+    cursor: pointer;
+    transition: all 1.5 ease-in;
+    -webkit-transition: all 1.5 ease-in;
+    -moz-transition: all 1.5 ease-in;
+    -ms-transition: all 1.5 ease-in;
+    -o-transition: all 1.5 ease-in;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+
+button#reset:hover {
+    background: rgb(248, 248, 248);
+    border: 1px solid #b8b8b8;
+}
+
 img {
     height: 12rem;
     width: 8rem;
-    border: 1px solid #333;
+    border: 1px solid #a0a0a0;
     padding: 0.25rem;
     margin: 0.5rem;
     background: #f5f5f5;
@@ -18,38 +115,111 @@ img {
     height: 12rem;
     width: 8rem;
     display: none;
-    border: 3px solid gold;
+    border: 2px solid gold;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
+.rotate {
+    animation: rotate .5s linear;
+    -webkit-animation: rotate .5s linear;
+}
+
+.rotate2 {
+    animation: rotate2 .5s linear;
+    -webkit-animation: rotate2 .5s linear;
+}
+
+@keyframes rotate2 {
+    0% {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+    }
+}
+
+.back, .front {
+    transition: 5s all ease-in;
+    -webkit-transition: 5s all ease-in;
+    -moz-transition: 5s all ease-in;
+    -ms-transition: 5s all ease-in;
+    -o-transition: 5s all ease-in;
+}
 
 .back {
+    position: relative;
     height: 12rem;
     width: 8rem;
-    background: url("img/back.png") no-repeat center center;
-    background-size: cover;
+    background-color: white;
+    border: 1px solid #c5c5c5;
+    border-radius: 10px;
     cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 4rem;
+    align-self: center;
+
     transition: 0.15s ease-in ;
     -webkit-transition: 0.15s ease-in ;
     -moz-transition: 0.15s ease-in ;
     -ms-transition: 0.15s ease-in ;
     -o-transition: 0.15s ease-in ;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.back::after {
+    content: "?";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .back:hover {
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
+    background-color: rgb(255, 227, 68);
+    border: 1px solid #a0a0a0;
 }
 
 #game {
-    border: 1px solid #333;
-    border-radius: 10px;
+    max-width: 47rem;
     padding: 0.5rem;
     margin: 0.5rem;
-    background: #f5f5f5;
-    box-shadow: 2px 2px 2px 2px #333;
 
     display: flex;
     flex-wrap: wrap;
