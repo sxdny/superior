@@ -1,4 +1,3 @@
-// definimos las variables globales
 let cards = [
   {
     name: "aquaman",
@@ -50,30 +49,48 @@ let cards = [
   },
 ];
 
-// imprimir el juego en el DOM
+// Iniciamos el juego
 $("document").ready(() => {
-  // variable para guardar el par de cartas seleccionadas
-  let selectedCards = [2];
-
-  cards = shuffle(cards);
-  cards = cortarArray(cards);
-
-  // creamos una copia del array sin afectar la original con .slice()
-  let copyCards = cards.slice();
-
-  // mezclamos la copia
-  copyCards = shuffle(copyCards);
-
-  // unimos los dos arrays
-  cards = cards.concat(copyCards);
-
   $("body").append("<h2>Comic Characters Memory game</h2>");
   $("body").append("<p>by Sidney Silva</p>");
   $("body").append(
     "<div id='buttons'><button id='start'>Start Game</button><button id='reset'>Reset</button></div>"
   );
 
+  $("body").append("<div id='message'><p>Hola me llamo Paco</p></div>");
+
+  $("#reset").on("click", () => {
+    $("#game").empty();
+    iniciarJuego();
+  });
+
+  $("#start").on("click", () => {
+    iniciarJuego();
+    $("#start").prop("disabled", true);
+    $("#start").addClass("disabled");
+  });
+
+  $("#reset").prop("disabled", true);
+  $("#reset").addClass("disabled");
+
   $("body").append("<div id='game'></div>");
+});
+
+
+function iniciarJuego() {
+  
+  if ($("#reset").prop("disabled") == true) {
+    $("#reset").prop("disabled", false);
+    $("#reset").removeClass("disabled");
+  }
+
+  cards = shuffle(cards);
+  cards = cortarArray(cards);
+
+  let copyCards = cards.slice();
+  copyCards = shuffle(copyCards);
+
+  cards = cards.concat(copyCards);
 
   cards.forEach((card) => {
     $("#game").append(
@@ -81,116 +98,21 @@ $("document").ready(() => {
     );
   });
 
-  // hacer que cuando haga click en la carta se muestre la imagen
   $(".back").on("click", comprobarCartas);
+}
 
-  // función para comprobar las cartas
-  function comprobarCartas() {
-    // añadimos la clase rotate
-    $(this).addClass("rotate");
+function comprobarGanador() {
+  
+  let cards = $(".card");
 
-    // cambiamos el estado de la carta a true
-    $(this).parent().attr("fliped", "true");
-
-    setTimeout(() => {
-      $(this).css("display", "none");
-      $(this).next().css("display", "block");
-      $(this).removeClass("rotate");
-    }, 460);
-
-    // guardamos las cartas con fliped true en la variable
-    selectedCards = $(`div[fliped="true"]`).map(function () {
-      return $(this).attr("data-card-name");
-    });
-
-    // mostramos las cartas seleccionadas
-    console.log(selectedCards);
-
-    // si la variable tiene dos cartas
-    if (selectedCards.length === 2) {
-      // deshabilitamos temporamente el evento click
-      $(".back").off("click");
-
-      // hacemos que se comprueben las cartas después de 1 segundo
-      setTimeout(() => {
-        // comprobamos si las cartas son iguales
-        if (selectedCards[0] == selectedCards[1]) {
-          // si son iguales las dejamos boca arriba
-
-          // obtenemos el data-card-name de la carta seleccionada
-          let cardName = $(this).parent().attr("data-card-name");
-
-          // seleccionamos las cartas con el mismo data-card-name
-          $(`div[data-card-name="${cardName}"][fliped="true"]`).css(
-            "display",
-            "block"
-          );
-
-          // cambiamos el estado guessed a true
-          $(`div[data-card-name="${cardName}"][fliped="true"]`).attr(
-            "guessed",
-            "true"
-          );
-
-          // cambiamos el estado fliped a false
-          $(`div[data-card-name="${cardName}"][fliped="true"]`).attr(
-            "fliped",
-            "false"
-          );
-
-          // borramos las cartas de la variable
-          selectedCards = [];
-
-          // revertimos la animación
-          $(this).removeClass("rotate");
-        } else {
-          // si no son iguales las volvemos a poner boca abajo
-
-          // obtenemos el data-card-name de las dos cartas seleccionadas
-          let cardName1 = selectedCards[0];
-          let cardName2 = selectedCards[1];
-
-          // seleccionamos las cartas con el mismo data-card-name
-          let card1 = $(`div[data-card-name="${cardName1}"][fliped="true"]`);
-          let card2 = $(`div[data-card-name="${cardName2}"][fliped="true"]`);
-
-          console.log(card1);
-          console.log(card2);
-
-          let children1 = $(card1).children();
-          let children2 = $(card2).children();
-
-          children1.addClass("rotate2");
-          children2.addClass("rotate2");
-
-          setTimeout(() => {
-            children1[0].style.display = "block";
-            children1[1].style.display = "none";
-
-            children2[0].style.display = "block";
-            children2[1].style.display = "none";
-
-            children1.removeClass("rotate2");
-            children2.removeClass("rotate2");
-          }, 200);
-
-          // cambiamos el estado fliped a false
-          card1.attr("fliped", "false");
-          card2.attr("fliped", "false");
-
-          // borramos las cartas de la variable
-          selectedCards = [];
-        }
-      }, 1000);
-
-      // habilitamos el evento click
-      $(".back").on("click", comprobarCartas);
+  cards.each(function () {
+    if ($(this).attr("guessed") == "false") {
+      return;
+    } else {
+      alert("Has ganado!");
     }
-
-  }
-});
-
-console.log("Hola Mundo!");
+  });
+}
 
 function shuffle(array) {
   var currentIndex = array.length,
@@ -211,10 +133,151 @@ function shuffle(array) {
   return array;
 }
 
-// función para cortar la array
 function cortarArray(array) {
   let longitudRandom = Math.floor(Math.random() * (array.length - 6) + 6);
 
   let arrayCortado = array.slice(0, longitudRandom);
   return arrayCortado;
+}
+
+function comprobarCartas() {
+
+  $(this).addClass("rotate");
+  $(this).parent().attr("fliped", "true");
+
+  // para que se vea la animación
+  setTimeout(() => {
+    $(this).css("display", "none");
+    $(this).next().css("display", "block");
+    $(this).removeClass("rotate");
+  }, 460);
+
+  selectedCards = $(`div[fliped="true"]`).map(function () {
+    return $(this).attr("data-card-name");
+  });
+
+  if (selectedCards.length === 2) {
+    
+    $(".back").off("click");
+
+    // para el factor sorpresa
+    setTimeout(() => {
+      if (selectedCards[0] == selectedCards[1]) {
+        let cardName = $(this).parent().attr("data-card-name");
+
+        $(`div[data-card-name="${cardName}"][fliped="true"]`).css(
+          "display",
+          "block"
+        );
+
+        $(`div[data-card-name="${cardName}"][fliped="true"]`).attr(
+          "guessed",
+          "true"
+        );
+
+        $(`div[data-card-name="${cardName}"][fliped="true"]`).attr(
+          "fliped",
+          "false"
+        );
+
+        selectedCards = [];
+
+        $("#message").html("<p>Has acertado!</p>");
+        $("#message").css("background-color", "#4CAF50");
+        $("#message").css("border-color", "#69ff3c");
+        $("#message").css("color", "#69ff3c");
+        $("#message").addClass("show-up");
+
+        // después de 2.5s, le quitamos la clase show-up
+        setTimeout(() => {
+          $("#message").removeClass("show-up");
+        }, 2500);
+
+        // revertimos la animación
+        $(this).removeClass("rotate");
+      } else {
+    
+        $("#message").html("<p>Has fallado!</p>");
+        $("#message").css("background-color", "#f44336");
+        $("#message").css("border-color", "#ff3c3c");
+        $("#message").css("color", "#ff3c3c");
+        $("#message").addClass("show-up");
+
+        // después de 2.5s, le quitamos la clase show-up
+        setTimeout(() => {
+          $("#message").removeClass("show-up");
+        }, 2500);
+
+        // obtenemos el data-card-name de las dos cartas seleccionadas
+        let cardName1 = selectedCards[0];
+        let cardName2 = selectedCards[1];
+
+        // seleccionamos las cartas con el mismo data-card-name
+        let card1 = $(`div[data-card-name="${cardName1}"][fliped="true"]`);
+        let card2 = $(`div[data-card-name="${cardName2}"][fliped="true"]`);
+
+        // seleccionamos los hijos de las cartas para poder rotarlos
+        let children1 = $(card1).children();
+        let children2 = $(card2).children();
+
+        children1.addClass("rotate2");
+        children2.addClass("rotate2");
+
+        // para que se vea la animación
+        setTimeout(() => {
+          children1[0].style.display = "block";
+          children1[1].style.display = "none";
+
+          children2[0].style.display = "block";
+          children2[1].style.display = "none";
+
+          children1.removeClass("rotate2");
+          children2.removeClass("rotate2");
+        }, 200);
+
+        card1.attr("fliped", "false");
+        card2.attr("fliped", "false");
+
+        selectedCards = [];
+      }
+
+      comprobarJuegoTerminado();
+    }, 1000);
+
+    $(".back").on("click", comprobarCartas);
+
+  }
+}
+
+function comprobarJuegoTerminado() {
+  let trues = 0;
+  let cards = $(".card");
+
+  cards.each(function () {
+
+    if ($(this).attr("guessed") == "true") {
+      trues++;
+    }
+    if (trues == cards.length) {
+      $("#message").html("<p>Has ganado!</p>");
+      $("#message").css("background-color", "gold");
+      $("#message").css("border-color", "#lightgoldenrodyellow");
+      $("#message").css("color", "#lightgoldenrodyellow");
+      $("#message").addClass("show-up");
+
+      // después de 2.5s, le quitamos la clase show-up
+      setTimeout(() => {
+        $("#message").removeClass("show-up");
+      }, 2500);
+
+      $("#start").prop("disabled", false);
+      $("#start").removeClass("disabled");
+
+      $("#reset").prop("disabled", true);
+      $("#reset").addClass("disabled");
+
+      $("#game").empty();
+    }
+
+  });
 }
