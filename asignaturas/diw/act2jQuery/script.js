@@ -84,15 +84,17 @@ function iniciarJuego() {
     $("#reset").removeClass("disabled");
   }
 
-  cards = shuffle(cards);
-  cards = cortarArray(cards);
+  let cartasJuego = [];
 
-  let copyCards = cards.slice();
+  cartasJuego = shuffle(cards);
+  cartasJuego = cortarArray(cartasJuego);
+
+  let copyCards = cartasJuego.slice();
   copyCards = shuffle(copyCards);
 
-  cards = cards.concat(copyCards);
+  cartasJuego = cartasJuego.concat(copyCards);
 
-  cards.forEach((card) => {
+  cartasJuego.forEach((card) => {
     $("#game").append(
       `<div class="card" guessed="false" fliped="false" data-card-name="${card.name}"><div class="back" name="${card.img}"></div><div class="front" style="background: url('img/${card.img}') no-repeat center center; background-size: cover"></div></div>`
     );
