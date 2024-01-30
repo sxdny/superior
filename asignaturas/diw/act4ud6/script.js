@@ -5,6 +5,8 @@ let closeButton = document.querySelector(".close-button");
 let openPostItDialog = document.getElementById("open-post-it-dialog-button");
 let createPostitDialog = document.getElementById("create-post-it-dialog");
 
+let confirmDialog = document.getElementById("confirm-dialog");
+
 let btnClosePostitDialog = document.getElementById("close-post-it-dialog");
 
 let createPostitButton = document.getElementById("create-post-it-button");
@@ -25,6 +27,7 @@ openPostItDialog.addEventListener("click", function () {
 
 btnClosePostitDialog.addEventListener("click", function () {
   
+  document.getElementById("delete-post-it").style.display = "none";
   document.getElementById("post-it-title").value = "";
   document.getElementById("post-it-content").value = "";
 
@@ -55,6 +58,37 @@ function checkFormPostit() {
     let newPostit = document.createElement("div");
 
     newPostit.addEventListener("click", function () {
+      // mostramos el botón de borrar post-it
+      document.getElementById("delete-post-it").style.display = "block";
+
+      // Añadimos el evento click al botón de borrar post-it
+      document.getElementById("delete-post-it").addEventListener("click", function () {
+        
+        confirmDialog.showModal();
+
+        document.getElementById("confirm-button").addEventListener("click", function () {
+          confirmDialog.close();
+          
+          // borramos el post-it
+          newPostit.remove();
+
+          // cerramos el diálogo del post-it
+          createPostitDialog.close();
+
+          // borramos el contenido del formulario
+          document.getElementById("post-it-title").value = "";
+          document.getElementById("post-it-content").value = "";
+
+          // ocultamos el botón de borrar post-it
+          document.getElementById("delete-post-it").style.display = "none";
+        });
+
+        document.getElementById("cancel-delete").addEventListener("click", function () {
+          confirmDialog.close();
+        });
+
+      });
+
       // Cambiamos el texto del modal
       document.getElementById("create-post-it-button").innerHTML = "Edit post-it";
       createPostitButton.removeEventListener("click", checkFormPostit);
@@ -118,6 +152,8 @@ function checkFormPostit() {
 
 function editPostit() {
 
+  document.getElementById("delete-post-it").style.display = "none";
+
   let postit = currentPostit;
   // Añadimos el evento click al botón de borrar post-it
 
@@ -169,7 +205,7 @@ function checkForm() {
 function createCategory() {
 
   // Crea la nueva categoría...
-  var newCategory = $("<div>").addClass("droppable").attr("id", "category-" + nCategories);
+  var newCategory = $("<div>").addClass("droppable category").attr("id", "category-" + nCategories);
 
   // Añadimos el contenido del formulario a la nueva categoría
   let name = document.getElementById("category-name").value;
@@ -205,7 +241,6 @@ function createCategory() {
 
   $(newCategory).find('.droppable').droppable({
     over: function (event, ui) {
-      console.log("over");
       $(this).addClass("can-drop");
     },
     out: function (event, ui) {
@@ -218,33 +253,50 @@ function createCategory() {
     },
     drop: function (event, ui) {
       $(this).removeClass("can-drop").addClass("has-postit");
-      // ... el resto de tu código de manejo del evento drop ...
     }
   })
 
-  $("#categories-section .droppable").each(function () {
+  $(".droppable").each(function () {
     $(this).droppable({
       over: function (event, ui) {
         this.classList.add("over");
-        console.log("over");
+        this.classList.remove("no-postit");
       },
       drop: function (event, ui) {
         this.classList.add("has-postit")
+        this.classList.remove("over");
         let dropped = ui.draggable;
-        let droppedOn = $(this);
+        let droppedOn = $(this.querySelector(".droppable"));
         $(dropped).detach().css({
           top: 0,
           left: 0
         }).appendTo(droppedOn);
+
+        // seleccionamos todos los droppables
+        let droppables = document.querySelectorAll(".droppable");
+
+        // recorremos todos los droppables
+        droppables.forEach(droppable => {
+
+          // seleccionamos todos los post-its de cada droppable
+          let postits = droppable.querySelectorAll(".postit");
+
+          // recorremos todos los post-its de cada droppable
+          if (postits.length == 0) {
+            droppable.classList.remove("has-postit");
+            droppable.classList.add("no-postit");
+          }
+
+          postits = "";
+        });
       },
       out: function (event, ui) {
-        this.classList.remove("over");
-        console.log("out");
-        // Comprobamos si la categoría tiene más post-its
-        // Si no tiene, borramos el texto
         let postits = this.querySelectorAll(".postit");
+        
         if (postits.length == 0) {
           this.classList.remove("has-postit");
+          this.classList.remove("over");
+          this.classList.add("no-postit")
         }
       }
     });
