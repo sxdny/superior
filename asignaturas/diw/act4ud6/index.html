@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery UI | Actvididad 4 UD6</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <dialog id="create-category-dialog">
+      <div>
+        <h3>Crear nueva categoría</h3>
+        <div class="info">
+          <p>Una categoría te permite tener mejor organizados tus post-its.</p>
+        </div>
+        <div class="form">
+          <div class="form-group">
+            <label for="category-name">Nombre de la categoría</label>
+            <input
+              type="text"
+              name="category-name"
+              id="category-name"
+              placeholder="Escribe el nombre de la categoría"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="category-description"
+              >Descripción de la categoría</label
+            >
+            <textarea
+              name="category-description"
+              id="category-description"
+              cols="30"
+              rows="10"
+              placeholder="Escribe una descripción de la categoría"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <!-- Mapear esto con un json -->
+            <label for="category-color">Color de la categoría</label>
+            <fieldset>
+              <div>
+                <input
+                  type="radio"
+                  name="category-color"
+                  id="category-color-1"
+                  value="#ff0000"
+                />
+                <label for="category-color-1"
+                  ><span style="background-color: #ff2121"></span
+                ></label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="category-color"
+                  id="category-color-2"
+                  value="#00ff00"
+                />
+
+                <label for="category-color-2"
+                  ><span style="background-color: #43ff43"></span
+                ></label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="close-button" autofocus>Cancel</button>
+        <button id="submit-button">Submit</button>
+      </div>
+    </dialog>
+
+    <dialog id="create-post-it-dialog">
+      <div id="post-it">
+        <input type="text" name="" id="post-it-title" placeholder="Título">
+        <textarea name="" id="post-it-content" cols="30" rows="10" placeholder="Inserta aquí el texto"></textarea>
+      </div>
+
+      <div class="btns">
+        <button id="close-post-it-dialog" class="close-button" autofocus>
+          Cancel
+        </button>
+        <button id="create-post-it-button">Create Post-it</button>
+      </div>
+
+      
+    </dialog>
+    <header>
+      <h1>Droppable Post-it with jQuery UI</h1>
+    </header>
+
+    <div class="app">
+      <section id="categories-section">
+        <div id="category-create" category="">
+          <button class="open-dialog">
+            <h3>Nueva categoría</h3>
+            <i class="las la-plus"></i>
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <div class="create-post-it">
+          <button class="btn-create-post-it" id="open-post-it-dialog-button">
+            <h3>Nuevo post-it</h3>
+            <i class="las la-plus"></i>
+          </button>
+        </div>
+
+        <section id="post-its-section">
+            
+        </section>
+
+      </section>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
