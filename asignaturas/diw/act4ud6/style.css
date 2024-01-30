@@ -261,7 +261,16 @@ div.category > .droppable {
   border-radius: 0.35rem;
   border: 1px dashed black;
   min-width: 15rem;
+  min-height: 15rem;
   background-color: rgba(255, 255, 255, 0.767);
+}
+
+div.category > .droppable.has-postit {
+  background-color: black;
+}
+
+.over {
+  border: 1px dashed red;
 }
 
 .app {
@@ -376,7 +385,7 @@ dialog#create-post-it-dialog[open] > .btns {
   padding: 1rem;
 }
 
-#post-it > input {
+#post-it > header > input {
   width: 100%;
   border: none;
   background-color: transparent;
@@ -388,7 +397,7 @@ dialog#create-post-it-dialog[open] > .btns {
   font-style: normal;
 }
 
-#post-it > input:focus {
+#post-it > header > input:focus {
   outline: none;
 }
 
@@ -417,8 +426,82 @@ div.postit {
   border: 1px solid lightgray;
   min-width: 25rem;
   margin: 1rem;
+  cursor: pointer;
 
   background-color: yellow;
 }
+
+div.postit > div.postit-header {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+div.postit > div.postit-header > h3 {
+  font-family: "Gochi Hand";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+div.postit > div.postit-header > button {
+  padding: 0.5rem;
+  border-radius: 0.35rem;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+div.postit > .postit-content {
+  width: 100%;
+  border: none;
+  resize: none;
+  background-color: transparent;
+  font-size: 1.25rem;
+  min-height: 5rem;
+  overflow: hidden;
+  cursor: pointer;
+
+  font-family: "Gochi Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+div.postit > .postit-content:focus {
+  outline: none;
+}
+
+#post-it > header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+
+.delete-postit-button {
+  padding: 0.5rem;
+  border-radius: 0.35rem;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+}
+
+
 
 

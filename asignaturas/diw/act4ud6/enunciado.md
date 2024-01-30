@@ -27,4 +27,10 @@ maximised, it will be minimised (so that only a part of it is visible) and, if i
 is minimised (it will return to its original size). Some kind of effect must be
 used when maximising and minimising post-its.
 
-A la derecha habrán los post-its y a la izquierda estarán las columnas por color
+A la derecha habrán los post-its y a la izquierda estarán las columnas por color.
+
+Hacer que la info se guarde en el localStorage y tal.
+
+Hacer que despues de unos segundos, el objeto
+sea draggaable para que el usuario pueda hacer
+clic sin ningun problema.

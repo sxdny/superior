@@ -82,8 +82,17 @@
 
     <dialog id="create-post-it-dialog">
       <div id="post-it">
-        <input type="text" name="" id="post-it-title" placeholder="Título">
-        <textarea name="" id="post-it-content" cols="30" rows="10" placeholder="Inserta aquí el texto"></textarea>
+        <header>
+          <input type="text" name="" id="post-it-title" placeholder="Título" />
+        </header>
+
+        <textarea
+          name=""
+          id="post-it-content"
+          cols="30"
+          rows="10"
+          placeholder="Inserta aquí el texto"
+        ></textarea>
       </div>
 
       <div class="btns">
@@ -92,8 +101,6 @@
         </button>
         <button id="create-post-it-button">Create Post-it</button>
       </div>
-
-      
     </dialog>
     <header>
       <h1>Droppable Post-it with jQuery UI</h1>
@@ -117,16 +124,19 @@
           </button>
         </div>
 
-        <section id="post-its-section">
-            
-        </section>
-
+        <section id="post-its-section"></section>
       </section>
-
     </div>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"
+    ></script>
+
     <script src="script.js"></script>
   </body>
 </html>
